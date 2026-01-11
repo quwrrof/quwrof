@@ -728,11 +728,13 @@ padding-top: 4px;
 .desch {
     font-size: 18px;
     color: #e3b2bb;
+
 }
 
 .desch1 {
     font-size: 18px;
     color: #e3b2bb;
+    
 }
 
 #desc2 {
@@ -760,16 +762,4 @@ padding-top: 4px;
 
 #typo > p {
     text-align: justify;
-}
-
-.chrollo {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  width: 230px;
-  height: 230px;
-  background: url(./images/chrollo.jpeg) no-repeat center;
-  background-size: 159px;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
 }
