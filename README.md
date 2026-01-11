@@ -1,2 +1,2 @@
-# personal-website
-my own personal website
+# quwrof
+this is quwrof's website
