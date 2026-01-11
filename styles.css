@@ -1,0 +1,775 @@
+@font-face {
+  font-family: Kosugi Maru; /* set name */
+  src: url(fonts/KosugiMaru-Regular.ttf); /* url of the font */
+}
+
+/* text selection */
+*::selection { 
+    color: #ecbdcd;
+}
+
+/* links */
+a:hover {
+  color: rgb(255, 187, 214);
+  cursor: url(./cursors/pointer.cur), pointer;
+}
+a {
+    color:rgb(196, 132, 158);
+    text-decoration: none;
+}
+
+html {
+        cursor: url(./cursors/default.cur), auto;
+}
+
+
+body {
+    scroll-behavior: smooth !important;
+    background-color: #00000000;
+}
+
+/* crt effect */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(#ffffff00 50%, #00000005 50%), linear-gradient(90deg, #f0f0f000, #00ff0005, #0000ff08);
+    z-index: 1;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none
+}
+
+
+/*--------------------------------------------------*/
+/* main box */
+.box {
+    width: 600px;
+    height: 435px;
+    border: 1px solid #c5c5c5;
+    background-image: radial-gradient(rgb(255, 255, 255) 22%, transparent 28%),
+    radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
+    background-position: 0px 0px, 10px 10px;
+    background-size: 20px 20px;
+    background-color: rgb(245, 245, 245);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 0px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2 {
+    width: 535px;
+    height: 370px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    border-radius: 7px;
+    border: 15px solid transparent;
+    border-style: solid;
+    position: absolute;
+}
+
+.box1 {
+    width: 535px;
+    height: 370px;
+    background-color: rgb(255, 255, 255, 0.3);
+    margin: auto;
+    background-image: url(./images/chii.jpg);
+    background-size: 260px;
+    background-position-x: -20px;
+    background-position-y: 40px;
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    border-radius: 7px;
+    border: 15px solid transparent;
+    border-image-source: url(./images/lace-g.png) !important;
+    border-image-slice: 5 !important;
+    border-image-width: 6px !important;
+    border-image-repeat: round !important;
+    border-style: solid;
+    border-image-outset: 2px;
+    position: relative;
+
+}
+
+.box1 > h2 {
+    font-size: 45px;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #808080;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.tab {
+    width: 602px;
+    height: 35px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    padding: 0px;
+    background-color: #c1c1c1;
+}
+
+.tab > p {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 6px;
+    font-size: 20px;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: 500;
+}
+
+#undertxt {
+    font-size: 12px;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.217);
+    text-align: center;
+    margin: 0;
+}
+
+/*--------------------------------------------------*/
+/* buttons */
+.wip1 {
+    flex: 50%;
+    margin: auto;
+    background: url(./images/wingl.gif) no-repeat center;
+    background-size: 70px;
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    border-radius: 30%;
+    /* transition: all 0.3s ease-in-out; */
+    /* margin-right: 30px; */
+    cursor: url(./cursors/pointer.cur), pointer;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    
+}
+
+.hide {
+    display: none;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    background-color: #ffe6ef;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    width: 80px;
+    position: absolute;
+    top: 67%;
+    left: 25%;
+    margin: auto;
+}
+
+.wip1:hover {
+    transform: scale(1.1);
+}
+
+.wip1:hover + .hide {
+    display: block;
+}
+
+.about {
+    flex: 50%;
+    margin: auto;
+    background: url(./images/bow.gif) no-repeat center;
+    background-size: 63px;
+    width: 63px;
+    height: 63px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    /* transition: all 0.3s ease-in-out; */
+    /* margin-right: 30px; */
+    cursor: url(./cursors/pointer.cur), pointer;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.hide3 {
+    display: none;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    background-color: #ffe6ef;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    width: 80px;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+}
+
+.about:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.about:hover + .hide3 {
+    display: block;
+}
+
+
+.wip2 {
+    flex: 50%;
+    margin: auto;
+    background: url(./images/wingr.gif) no-repeat center;
+    background-size: 70px;
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    border-radius: 30%;
+    /* transition: all 0.3s ease-in-out; */
+    cursor: url(./cursors/pointer.cur), pointer;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    right: 25%;
+}
+
+.hide2 {
+    display: none;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    background-color: #ffe6ef;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    width: 80px;
+    position: absolute;
+    top: 67%;
+    right: 25%;
+    margin: auto;
+}
+
+.wip2:hover {
+    transform: scale(1.1);
+}
+
+.wip2:hover + .hide2 {
+    display: block;
+}
+
+/*--------------------------------------------------*/
+/* window */
+.bomboclaat {
+    display: none;
+    width: 550px;
+    height: 410px;
+    border: 1px solid #c5c5c5;
+    background-color: #ffffff;
+    background-image: radial-gradient(rgb(255, 255, 255) 22%, transparent 28%),
+    radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
+    background-position: 0px 0px, 10px 10px;
+    background-size: 20px 20px;
+    background-color: rgb(245, 245, 245);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 0px;
+    margin: auto;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: stretch;      
+    position: fixed;
+    /* justify-content: center;
+    align-items: center; */
+    transform: scale(0.1);
+    pointer-events: none;
+    top: 200px;
+    left: 460px;
+}
+
+.window.show {
+    display: block;
+    pointer-events: auto;
+}
+
+.window-top {
+    width: 535px;
+    height: 35px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    margin-bottom: 0px;
+    padding: 0px;
+    background-color: #c1c1c1;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 35px;
+    cursor: url(./cursors/move.cur), move;
+}
+
+#aboutt {
+ font-size: 20px;
+}
+
+#common {
+ font-size: 20px;
+}
+
+#random {
+ font-size: 20px;
+}
+
+/* tab buttons */
+.tab-btn {
+    flex: 0.2;
+    height: 35px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    border-right: 1px solid #a4a4a4;
+    background: transparent;
+    font-size: 14px;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.415);
+    cursor: url(./cursors/pointer.cur), pointer;
+}
+
+.tab-btn:hover {
+     background-color: #ffffff3b;
+}
+
+.tab-btn:first-child {
+    border-top-left-radius: 9px;
+}
+
+.tab-btn.active {
+    background-color: #edcfda;
+    color: #ffffff;
+    /* font-weight: 600; */
+}
+
+/* close button */
+.close {
+	height: 35px;
+	width: 35px;
+    position: absolute;
+    top: 0;
+    right: -15px;
+	border: none;
+    border-top-right-radius: 9px;
+    cursor: pointer;
+    cursor: url(./cursors/pointer.cur), pointer;
+}
+
+.close > p {
+    font-size: 12px;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.415);
+    margin: auto;
+}
+
+/* tooltip */
+.tooltip-target {
+    cursor: url(./cursors/move.cur), help;
+    border-bottom: 1px dotted #cacaca;
+}
+
+.tooltip-target:hover {
+        color: #e3b2bb;
+}
+
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    display: none;
+    background: #ffe6ef;
+    color: #00000069;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    z-index: 5;
+    white-space: pre;
+    max-width: none;
+    text-align: center;
+}
+
+/* window animation */
+.bomboclaat.show {
+    display: block;
+    animation: popIn 0.18s cubic-bezier(0, 0.8, 0.2, 1) forwards;
+    pointer-events: auto;
+}
+@keyframes popIn {
+  0%   { transform: scale(0.01); }
+  /* 80%  { transform: scale(1.02); } */
+  100% { transform: scale(1); }
+}
+
+/* about window */
+.window-content {
+    width: 525px;
+    height: 350px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    margin-top: 6px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    border-image-source: url(./images/lace-g.png) !important;
+    border-image-slice: 5 !important;
+    border-image-width: 6px !important;
+    border-image-repeat: round !important;
+    border-style: solid;
+    border-image-outset: 2px;
+    position: relative;
+	padding: 5px;
+    overflow: visible;
+}
+
+/* scrollbar */
+.aboutme1::-webkit-scrollbar { width: 10px; }
+.aboutme1::-webkit-scrollbar-track { background: #f5f5f5; }
+.aboutme1::-webkit-scrollbar-thumb { background:#edcfda; border-radius: 6px; }
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.aboutme {
+    height: 330px;
+    background-image: url(./images/hitagi.PNG);
+    background-size: 430px;
+    background-position-x: 200px;
+    background-repeat: no-repeat;
+	font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14;
+    color: #696969;
+    padding-right: 180px;
+    padding-top: 20px;
+    text-align: center;
+    line-height: 1.5;
+    position: relative;
+
+}
+.aboutme1 {
+    height: 350px;
+    background-size: 400px;
+    background-position-x: 225px;
+    background-repeat: no-repeat;
+	font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14;
+    color: #696969;
+    padding-right: 180px;
+    text-align: center;
+    line-height: 1.5;
+    position: relative;
+    overflow-y:scroll;
+      overflow-x: hidden;
+}
+
+/* kins grid */
+.kins-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-auto-rows: 150px;
+    gap: 16px;
+    justify-content: center;
+    align-content: center;
+    padding-top: 18px;
+    padding-left: 180px;
+}
+
+.kins-item {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.kins-item img {
+    display: block;
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding-left: 5px;
+}
+
+.kins-item:nth-child(3) img {
+  width: 130px;
+  height: 130px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.kins-item:nth-child(1) img {
+  /* width: 148px;
+  height: 148px; */
+transform: scale(1.07);
+padding-top: 4px;
+}
+
+.kins-item:nth-child(2) img {
+  width: 130px;
+  height: 130px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.kins-item:nth-child(5) img {
+  width: 140px;
+  height: 140px;
+  padding-top: 11px;
+  padding-left: 6px;
+}
+
+.kins-frame {
+    position: absolute;
+    inset: -8px;
+    background: url(./images/frame3.png) center/100% 100% no-repeat;
+    pointer-events: none;
+}
+
+/* .aboutme2 {
+    height: 360px;
+    background-size: 400px;
+    background-position-x: 225px;
+    background-repeat: no-repeat;
+	font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14;
+    color: #696969;
+    padding-right: 180px;
+    text-align: center;
+    line-height: 1.5;
+    position: relative;
+} */
+
+.aboutme > h2 {
+    text-align: left;
+    padding-left: 45px;
+}
+
+/* text gifs */
+.img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+.img1 {
+    background-image: url(./images/bow.gif);
+}
+
+.img2 {
+    background-image: url(./images/panda.gif);
+}
+
+.img3 {
+    background-image: url(./images/cat.gif);
+}
+
+.img4 {
+    background-image: url(./images/bubble.gif);
+}
+
+.img5 {
+    background-image: url(./images/wing2l.gif);
+    width:26px;
+}
+
+.img6 {
+    background-image: url(./images/wing2r.gif);
+    width:26px;
+}
+
+.img7 {
+    background-image: url(./images/mienshao.png);
+    width: 25px;
+    height: 23px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+.img8 {
+    background-image: url(./images/sylveon.png);
+    width: 25px;
+    height: 23px;
+    background-size: 23px;
+    background-repeat: no-repeat;
+}
+
+.img9 {
+    background-image: url(./images/glaceon.png);
+    width: 27px;
+    height: 23px;
+    background-size: 27px;
+    background-repeat: no-repeat;
+}
+
+.img10 {
+    background-image: url(./images/catt.gif);
+}
+
+.img11 {
+    background-image: url(./images/cattt.gif);
+}
+
+.img12 {
+    background-image: url(./images/cat.gif);
+}
+
+/* favorites tab */
+.fav {
+    padding-left: 30px;
+    width: 440px;
+    text-align: justify;
+}
+
+.hd {
+    font-size: 21px;
+    text-align: left;
+    margin: 0;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color:rgb(206, 147, 173);
+}
+
+
+/* my cat page */
+
+.roundd {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    display: grid;
+    place-items: center;
+    background-image: radial-gradient(rgb(255, 255, 255) 22%, transparent 28%),
+    radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
+    background-position: 0px 0px, 10px 10px;
+    background-size: 20px 20px;
+    background-color: rgb(239, 220, 226);
+    border-radius: 50%;
+}
+
+.round {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  width: 230px;
+  height: 230px;
+  background: url(./images/nomnom.png) no-repeat center;
+  background-size: 150px;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+
+.round2 {
+  position: absolute;
+  inset: 0;
+  background: url(./images/frame.png) center/100% 100% no-repeat;
+  pointer-events: none;
+}
+
+.desc {
+    position: absolute;
+    height: 180px;
+    width: 229px;
+    top: 15px;
+    left: 10px;
+    background-color: #fff7f9;
+    border-radius: 7px;
+    border: 15px solid transparent;
+    border-image-source: url(./images/lace-p.png) !important;
+    border-image-slice: 5 !important;
+    border-image-width: 6px !important;
+    border-image-repeat: round !important;
+    border-style: solid;
+    border-image-outset: 2px;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #959595;
+    text-align: left;
+        /* line-height: 1.2; */
+}
+
+.desc > p {
+    bottom: 15px;
+    position: relative;
+}
+
+.desch {
+    font-size: 18px;
+    color: #e3b2bb;
+}
+
+.desch1 {
+    font-size: 18px;
+    color: #e3b2bb;
+}
+
+#desc2 {
+    position: absolute;
+    height: 85px;
+    width: 465px;
+    top: 232px;
+}
+
+#desc2 > p {
+    bottom: 26px;
+    line-height: 1;
+}
+
+/* .nomnom1 {
+    position: absolute;
+    top: 240px;
+    right: 0px;
+    width: 130px;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+
+} */
+
+#typo > p {
+    text-align: justify;
+}
+
+.chrollo {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  width: 230px;
+  height: 230px;
+  background: url(./images/chrollo.jpeg) no-repeat center;
+  background-size: 159px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
