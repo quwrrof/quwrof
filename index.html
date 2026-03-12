@@ -49,6 +49,11 @@ feel free to take inspo from my website! ^_^
  <div class="box1">
  <h2>welcome to my website!</h2>
 
+ <button class="tip" onclick="clickSound();"></button>
+ <span class="tips">
+    tips
+ </span>
+
 <audio id="clicksound" src="sound/click.mp3" autostart="false"></audio>
  <button class="wip1" onclick="clickSound();"></button>
  <span class="hide">
@@ -69,6 +74,25 @@ feel free to take inspo from my website! ^_^
 
 </div>
 <p id="undertxt">this website is intended to be viewed on desktop.</p>
+
+<div id="tipWindow" class="bomboclaat tip-window">
+    <div class="window-top">
+        <button class="tab-btn active" data-tab="tip"><p>tips</p></button>
+        <button class="close" onclick="closeSound();">
+            <p>x</p>
+        </button>
+    </div>
+
+    <div class="window-content">
+        <div class="tab-panel active" data-tab="tip">
+            <div class="tip-content">
+                <p>you can drag windows by the top bar.</p>
+                <p>hover on underlined text for notes.</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- TODO: clean all this mess up and rename things -->
@@ -95,9 +119,9 @@ feel free to take inspo from my website! ^_^
         <p>
         <span class="tooltip-target" data-tooltip="my name is inspired by chrollo from hxh, spelled 'quwrof' by the author">quwrof</span>
 
-        <span class="img img1"></span>
-        twenty
-        <span class="img img1"></span>
+        <span class="img img14"></span>
+        21
+        <span class="img img14"></span>
         she/her
         <br>
         lebanese
@@ -109,13 +133,15 @@ feel free to take inspo from my website! ^_^
         <!-- scottish straight cat mom
         <span class="img img3"></span>
         <br> -->
-        <span class="tooltip-target" data-tooltip="jungian psychological types">ET(N)</span>
+        <span class="tooltip-target" data-tooltip="jungian psychological types">ET</span>
+        <span class="img img1"></span>
         <span class="tooltip-target" data-tooltip="enneagram">SO712</span>
+        <span class="img img1"></span>
         <span class="tooltip-target" data-tooltip="psychosophy">LVFE</span>
         
+
         <br>
-        <br>
-        <a href="https://anilist.co/user/quwrof/">anilist<span class="img img2"></span></a>
+        <p><span class="tooltip-target discord-link-color" data-tooltip="@quwrrof">discord</span> ⎯ <a href="https://anilist.co/user/quwrof/">anilist<span class="img img2"></span></a></p>
 
       </p>
       </div>
@@ -128,12 +154,12 @@ feel free to take inspo from my website! ^_^
 
           <p><span class="hd">interests</span> matcha, psychological typology, sudoku, animanga (retro,shoujosei,mystery,(psych.)thriller), manhwa, pokemon card collecting, animals, tech, astronomy, sticker collecting, travelling, pharmacology</p>
 
-          <p><span class="hd">animanga</span> hunter x hunter, monster, takarajima, attack on titan, rose of versailles, vagabond, apothecary diaries, nana, death note, karekano, mononoke series, monogatari series, beastars, berserk, howl's moving castle, billy bat</p>
-          <p><span class="hd">music</span> nujabes, masayoshi takanaka, illit, yuji ohno, humming urban stereo, atlus sound team,  shing02, sade, serani poji, toby fox, makoto matsushita, lisa ono, blu-swing, cise starr, orange lounge, newjeans</p>
+          <p><span class="hd">animanga</span> hunter x hunter, monster, takarajima, attack on titan, rose of versailles, vagabond, apothecary diaries, nana, death note, karekano, mononoke series, monogatari series, beastars, berserk, howl's moving castle, billy bat, jujutsu kaisen</p>
+          <p><span class="hd">music</span> nujabes, masayoshi takanaka, yuji ohno, HUS, atlus sound team,  shing02, sade, serani poji, toby fox, makoto matsushita, lisa ono, blu-swing, cise starr, orange lounge, newjeans, frenesi, astrud gilberto</p>
           <p><span class="hd">games</span> undertale, super mario galaxy 1 and 2, minecraft, animal jam, animal crossing, roblox </p>
           <p><span class="hd">pokemon</span> mienshao<span class="img img7"></span>, sylveon<span class="img img8"></span>, glaceon<span class="img img9"></span></p>
           <p><span class="hd">sanrio,san-x,etc.</span> usahana, my melody, monchhichi, sugarbunnies, pochacco, chi chai monchan, korilakkuma</p>
-          <p><span class="hd">animals</span> snow leopards and other felines, red pandas, bunnies, sea otters, monkeys, sea angels </p>
+          <p><span class="hd">animals</span> snow leopards and other felines, red pandas, bunnies, otters, monkeys, sea angels, seals, sharks </p>
           <p><span class="hd">flowers</span> plumeria, lavender, lily of the valley, hibiscus, wisteria, oriental lily, water lily </p>
           <p><span class="hd">celestial objects</span> pleiades, moon, neptune, pluto, orion's belt</p>
 
@@ -194,7 +220,7 @@ feel free to take inspo from my website! ^_^
         <p>
           <span class="desch1">fun facts:</span> <span class="img img11"></span>
           <br>
-          my favorite food is rabbit-based kibble...<br>
+          favorite food: rabbit-based kibble...<br>
           my favorite toy is a bouncy ball...<br>
           my favorite activity is running! <br>
           i purr just from being looked at! <br>
@@ -251,9 +277,9 @@ feel free to take inspo from my website! ^_^
 
   </div>
 
-</div>
+</div> -->
 
-<div id="Window3" class="bomboclaat">
+ <!--  <div id="Window3" class="bomboclaat">
     <div class="window-top">
         <button id="random" class="tab-btn active" data-tab="random"><p>wip</p></button>
         <button class="tab-btn" data-tab="idk"><p>wip</p></button>

@@ -2,6 +2,7 @@ const windows  = Array.from(document.querySelectorAll('.bomboclaat'));
 const windowEl = document.querySelector('#myWindow');
 const windowEk = document.querySelector('#Window2');
 const windowEj = document.querySelector('#Window3');
+const tipWindow = document.querySelector('#tipWindow');
 let zCounter = 10;
 
 
@@ -154,6 +155,15 @@ if (aboutBtn && windowEl) {
         setActiveTab(windowEl, 'about');
         windowEl.classList.add('show');
         bringToFront(windowEl);
+    });
+}
+
+const tipBtn = document.querySelector('.tip');
+if (tipBtn && tipWindow) {
+    tipBtn.addEventListener('click', () => {
+        setActiveTab(tipWindow, 'tip');
+        tipWindow.classList.add('show');
+        bringToFront(tipWindow);
     });
 }
 

@@ -18,6 +18,14 @@ a {
     text-decoration: none;
 }
 
+.discord-link-color {
+    color: rgb(196, 132, 158);
+}
+
+.tooltip-target.discord-link-color {
+    border-bottom: none;
+}
+
 html {
         cursor: url(./cursors/default.cur), auto;
 }
@@ -140,6 +148,40 @@ body::before {
 
 /*--------------------------------------------------*/
 /* buttons */
+
+.tip {
+    background: url(/images/bunny.gif) no-repeat center;
+    background-size: 100%;
+    width:30px;
+    height:30px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    border-radius: 20%;
+    cursor: url(./cursors/pointer.cur), pointer;
+    margin: auto;
+    position: absolute;
+    bottom: 2%;
+    left: 94%;
+}
+
+.tip:hover {
+    transform: scale(1.1);
+}
+
+.tips {
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.405);
+    border-radius: 3px;
+    text-align: center;
+    width: 40px;
+    position: absolute;
+    bottom: -12px;
+    left: 93.1%;
+    margin: auto; 
+}
+
 .wip1 {
     flex: 50%;
     margin: auto;
@@ -157,8 +199,7 @@ body::before {
     margin: auto;
     position: absolute;
     top: 50%;
-    left: 25%;
-    
+    left: 25%; 
 }
 
 .hide {
@@ -301,6 +342,48 @@ body::before {
     pointer-events: none;
     top: 200px;
     left: 460px;
+}
+
+.tip-window {
+    width: 250px;
+    height: 200px;
+    top: 235px;
+    left: 560px;
+}
+
+.tip-window .window-top {
+    width: 235px;
+}
+
+.tip-window .window-content {
+    width: 225px;
+    height: 140px;
+}
+
+.tip-window .tab-btn {
+    flex: 1;
+    justify-content: flex-start;
+    padding-left: 12px;
+    border-right: none;
+    font-size: 17px;
+}
+
+.tip-window .tab-btn.active {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+.tip-content {
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #696969;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+    padding: 8px 14px;
+}
+
+.tip-content p {
+    margin: 8px 0;
 }
 
 .window.show {
@@ -533,17 +616,17 @@ padding-top: 4px;
 }
 
 .kins-item:nth-child(2) img {
-  width: 130px;
-  height: 130px;
+  width: 137px;
+  height: 137px;
   padding-top: 10px;
-  padding-left: 10px;
+  padding-left: 8px;
 }
 
 .kins-item:nth-child(5) img {
-  width: 140px;
-  height: 140px;
-  padding-top: 11px;
-  padding-left: 6px;
+  width: 132px;
+  height: 132px;
+  padding-top: 7px;
+  padding-left: 10px;
 }
 
 .kins-frame {
@@ -643,6 +726,15 @@ padding-top: 4px;
 
 .img12 {
     background-image: url(./images/cat.gif);
+}
+
+.img13 {
+    background-image: url(./images/bunny.gif);
+    background-blend-mode:soft-light
+}
+
+.img14 {
+    background-image: url(./images/bow2.gif);
 }
 
 /* favorites tab */
