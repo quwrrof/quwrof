@@ -161,6 +161,26 @@ if (aboutBtn && windowEl) {
 const tipBtn = document.querySelector('.tip');
 if (tipBtn && tipWindow) {
     tipBtn.addEventListener('click', () => {
+        const btnRect = tipBtn.getBoundingClientRect();
+        const tipWidth = parseFloat(getComputedStyle(tipWindow).width) || 250;
+        const tipHeight = parseFloat(getComputedStyle(tipWindow).height) || 200;
+
+        const margin = 8;
+        const offsetX = -60;
+        const offsetY = 12;
+
+        let left = btnRect.right + offsetX;
+        let top = btnRect.top - tipHeight - offsetY;
+
+        const maxLeft = window.innerWidth - tipWidth - margin;
+        const maxTop = window.innerHeight - tipHeight - margin;
+
+        left = Math.min(Math.max(margin, left), maxLeft);
+        top = Math.min(Math.max(margin, top), maxTop);
+
+        tipWindow.style.left = left + 'px';
+        tipWindow.style.top = top + 'px';
+
         setActiveTab(tipWindow, 'tip');
         tipWindow.classList.add('show');
         bringToFront(tipWindow);
