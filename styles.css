@@ -28,12 +28,16 @@ a {
 
 html {
         cursor: url(./cursors/default.cur), auto;
+        overflow: hidden;
+        height: 100%;
 }
 
 
 body {
     scroll-behavior: smooth !important;
     background-color: #00000000;
+    overflow: hidden;
+    height: 100%;
 }
 
 /* crt effect */
@@ -206,8 +210,8 @@ body::before {
     display: none;
     font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 20px;
-    background-color: #ffe6ef;
-    color: white;
+    background-color: #ffe6ef00;
+    color: rgba(0, 0, 0, 0.405);
     border-radius: 3px;
     text-align: center;
     width: 80px;
@@ -250,8 +254,8 @@ body::before {
     display: none;
     font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 20px;
-    background-color: #ffe6ef;
-    color: white;
+    background-color: #ffe6ef00;
+    color: rgba(0, 0, 0, 0.405);
     border-radius: 3px;
     text-align: center;
     width: 80px;
@@ -294,8 +298,8 @@ body::before {
     display: none;
     font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 20px;
-    background-color: #ffe6ef;
-    color: white;
+    background-color: #ffe6ef00;
+    color: rgba(0, 0, 0, 0.405);
     border-radius: 3px;
     text-align: center;
     width: 80px;

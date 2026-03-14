@@ -3,7 +3,9 @@ const windowEl = document.querySelector('#myWindow');
 const windowEk = document.querySelector('#Window2');
 const windowEj = document.querySelector('#Window3');
 const tipWindow = document.querySelector('#tipWindow');
+const mainBox = document.querySelector('.box');
 let zCounter = 10;
+let previousMainBoxRect = mainBox ? mainBox.getBoundingClientRect() : null;
 
 
 // sounds
@@ -28,6 +30,49 @@ function bringToFront(el) {
     }
     
     el.style.zIndex = zCounter;
+}
+
+function clampWindowPosition(el, left, top) {
+    const maxLeft = Math.max(0, window.innerWidth - el.offsetWidth);
+    const maxTop = Math.max(0, window.innerHeight - el.offsetHeight);
+
+    return {
+        left: Math.min(Math.max(0, left), maxLeft),
+        top: Math.min(Math.max(0, top), maxTop),
+    };
+}
+
+function moveWindowsWithMainBox() {
+    if (!mainBox) return;
+
+    const nextMainBoxRect = mainBox.getBoundingClientRect();
+
+    if (!previousMainBoxRect) {
+        previousMainBoxRect = nextMainBoxRect;
+        return;
+    }
+
+    const deltaX = nextMainBoxRect.left - previousMainBoxRect.left;
+    const deltaY = nextMainBoxRect.top - previousMainBoxRect.top;
+
+    previousMainBoxRect = nextMainBoxRect;
+
+    if (!deltaX && !deltaY) {
+        return;
+    }
+
+    windows.forEach(win => {
+        const currentLeft = parseFloat(win.style.left || window.getComputedStyle(win).left);
+        const currentTop = parseFloat(win.style.top || window.getComputedStyle(win).top);
+
+        if (Number.isNaN(currentLeft) || Number.isNaN(currentTop)) {
+            return;
+        }
+
+        const nextPosition = clampWindowPosition(win, currentLeft + deltaX, currentTop + deltaY);
+        win.style.left = nextPosition.left + 'px';
+        win.style.top = nextPosition.top + 'px';
+    });
 }
 
 // switching between tabs
@@ -112,9 +157,9 @@ function makeDraggable (element) {
         previousPosX = e.clientX;
         previousPosY = e.clientY;
         // When the mouse is let go, call the closing event
-        document.onmouseup = closeDragElement;
+        document.addEventListener('mouseup', closeDragElement);
         // call a function whenever the cursor moves
-        document.onmousemove = elementDrag;
+        document.addEventListener('mousemove', elementDrag);
     }
 
 function elementDrag(e) {
@@ -129,22 +174,15 @@ function elementDrag(e) {
     let newTop = element.offsetTop - currentPosY;
     let newLeft = element.offsetLeft - currentPosX;
 
-    const maxLeft = window.innerWidth - element.offsetWidth;
-    const maxTop = window.innerHeight - element.offsetHeight;
-
-    if (newLeft < 0) newLeft = 0;
-    if (newTop < 0) newTop = 0;
-    if (newLeft > maxLeft) newLeft = maxLeft;
-    if (newTop > maxTop) newTop = maxTop;
-
-    element.style.top = newTop + 'px';
-    element.style.left = newLeft + 'px';
+    const nextPosition = clampWindowPosition(element, newLeft, newTop);
+    element.style.top = nextPosition.top + 'px';
+    element.style.left = nextPosition.left + 'px';
 }
 
     function closeDragElement () {
         // Stop moving when mouse button is released and release events
-        document.onmouseup = null;
-        document.onmousemove = null;
+        document.removeEventListener('mouseup', closeDragElement);
+        document.removeEventListener('mousemove', elementDrag);
     }
 }
 
@@ -210,6 +248,8 @@ windows.forEach(win => {
     makeDraggable(win);
     win.addEventListener('mousedown', () => bringToFront(win));
 });
+
+window.addEventListener('resize', moveWindowsWithMainBox);
 
 
 // close the window on click of an x button
