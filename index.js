@@ -3,6 +3,7 @@ const windowEl = document.querySelector('#myWindow');
 const windowEk = document.querySelector('#Window2');
 const windowEj = document.querySelector('#Window3');
 const tipWindow = document.querySelector('#tipWindow');
+const updateWindow = document.querySelector('#updateWindow');
 const mainBox = document.querySelector('.box');
 let zCounter = 10;
 let previousMainBoxRect = mainBox ? mainBox.getBoundingClientRect() : null;
@@ -75,6 +76,27 @@ function moveWindowsWithMainBox() {
     });
 }
 
+function positionSmallWindow(triggerBtn, popupWindow, offsets) {
+    if (!triggerBtn || !popupWindow) return;
+
+    const btnRect = triggerBtn.getBoundingClientRect();
+    const popupWidth = parseFloat(getComputedStyle(popupWindow).width) || 250;
+    const popupHeight = parseFloat(getComputedStyle(popupWindow).height) || 200;
+
+    const margin = 8;
+    let left = btnRect.right + offsets.x;
+    let top = btnRect.top + offsets.y;
+
+    const maxLeft = window.innerWidth - popupWidth - margin;
+    const maxTop = window.innerHeight - popupHeight - margin;
+
+    left = Math.min(Math.max(margin, left), maxLeft);
+    top = Math.min(Math.max(margin, top), maxTop);
+
+    popupWindow.style.left = left + 'px';
+    popupWindow.style.top = top + 'px';
+}
+
 // switching between tabs
 function setActiveTab(win, tabName) {
     if (!win) return;
@@ -106,6 +128,7 @@ function initWindow(win) {
     const tooltip        = win.querySelector('.tooltip');
     const container      = win.querySelector('.window-content');
     const tooltipTargets = Array.from(win.querySelectorAll('.tooltip-target'));
+    const scrollLinks    = Array.from(win.querySelectorAll('[data-scroll-target]'));
 
     if (tooltip && container && tooltipTargets.length) {
         tooltipTargets.forEach(target => {
@@ -131,6 +154,63 @@ function initWindow(win) {
             });
         });
     }
+
+    if (container && scrollLinks.length) {
+        scrollLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                const panel = link.closest('.aboutme1, .aboutme3');
+                const target = win.querySelector('#' + link.dataset.scrollTarget);
+
+                if (!panel || !target) return;
+
+                e.preventDefault();
+                panel.scrollTo({
+                    top: target.offsetTop - 8,
+                    behavior: 'smooth',
+                });
+            });
+        });
+    }
+}
+
+function initMatchaSubtabs() {
+    const groups = Array.from(document.querySelectorAll('[data-subtabs]'));
+
+    groups.forEach(group => {
+        const buttons = Array.from(group.querySelectorAll('.matcha-subtab-btn'));
+        const panels = Array.from(group.querySelectorAll('.matcha-subtab-panel'));
+        const scrollContainer = group.closest('.aboutme3');
+
+        function syncScrollState(targetTab) {
+            if (!scrollContainer) return;
+
+            const disableScroll = targetTab === 'intro';
+            scrollContainer.classList.toggle('no-scroll', disableScroll);
+
+            if (disableScroll) {
+                scrollContainer.scrollTop = 0;
+            }
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.dataset.subtab;
+
+                buttons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.subtab === targetTab);
+                });
+
+                panels.forEach(panel => {
+                    panel.classList.toggle('active', panel.dataset.subtab === targetTab);
+                });
+
+                syncScrollState(targetTab);
+            });
+        });
+
+        const activeButton = group.querySelector('.matcha-subtab-btn.active');
+        syncScrollState(activeButton ? activeButton.dataset.subtab : 'intro');
+    });
 }
 
 
@@ -199,25 +279,7 @@ if (aboutBtn && windowEl) {
 const tipBtn = document.querySelector('.tip');
 if (tipBtn && tipWindow) {
     tipBtn.addEventListener('click', () => {
-        const btnRect = tipBtn.getBoundingClientRect();
-        const tipWidth = parseFloat(getComputedStyle(tipWindow).width) || 250;
-        const tipHeight = parseFloat(getComputedStyle(tipWindow).height) || 200;
-
-        const margin = 8;
-        const offsetX = -60;
-        const offsetY = 12;
-
-        let left = btnRect.right + offsetX;
-        let top = btnRect.top - tipHeight - offsetY;
-
-        const maxLeft = window.innerWidth - tipWidth - margin;
-        const maxTop = window.innerHeight - tipHeight - margin;
-
-        left = Math.min(Math.max(margin, left), maxLeft);
-        top = Math.min(Math.max(margin, top), maxTop);
-
-        tipWindow.style.left = left + 'px';
-        tipWindow.style.top = top + 'px';
+        positionSmallWindow(tipBtn, tipWindow, { x: -60, y: -212 });
 
         setActiveTab(tipWindow, 'tip');
         tipWindow.classList.add('show');
@@ -225,10 +287,21 @@ if (tipBtn && tipWindow) {
     });
 }
 
+const updateBtn = document.querySelector('.update');
+if (updateBtn && updateWindow) {
+    updateBtn.addEventListener('click', () => {
+        positionSmallWindow(updateBtn, updateWindow, { x: -40, y: -210 });
+
+        setActiveTab(updateWindow, 'updates');
+        updateWindow.classList.add('show');
+        bringToFront(updateWindow);
+    });
+}
+
 const wipBtn = document.querySelector('.wip1');
 if (wipBtn && windowEk) {
     wipBtn.addEventListener('click', () => {
-        setActiveTab(windowEk, 'commonplaceb');
+        setActiveTab(windowEk, 'matcha');
         windowEk.classList.add('show');
         bringToFront(windowEk);
     });
@@ -248,6 +321,8 @@ windows.forEach(win => {
     makeDraggable(win);
     win.addEventListener('mousedown', () => bringToFront(win));
 });
+
+initMatchaSubtabs();
 
 window.addEventListener('resize', moveWindowsWithMainBox);
 

@@ -1,4 +1,5 @@
-var colour = "gray";
+var colour = "rgb(230, 195, 207)"
+;
 var sparkles = 100;
 
 var dustCount = 10;
@@ -10,7 +11,7 @@ var swide = 800;
 var shigh = 600;
 var sleft = 0;
 var sdown = 0;
-var colours = ["gray"];
+var colours = ["rgb(230, 203, 212)"];
 
 var dustDots = [];
 var tiny = [];

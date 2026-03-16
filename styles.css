@@ -10,12 +10,13 @@
 
 /* links */
 a:hover {
-  color: rgb(255, 187, 214);
+  color: rgb(231, 201, 213);
   cursor: url(./cursors/pointer.cur), pointer;
 }
 a {
     color:rgb(196, 132, 158);
     text-decoration: none;
+    transition: color 0.15s ease;
 }
 
 .discord-link-color {
@@ -152,6 +153,39 @@ body::before {
 
 /*--------------------------------------------------*/
 /* buttons */
+
+.update {
+    background: url(./images/mail.gif) no-repeat center;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    border-radius: 20%;
+    cursor: url(./cursors/pointer.cur), pointer;
+    margin: auto;
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+}
+
+.update:hover {
+    transform: scale(1.1);
+}
+
+.updates {
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.405);
+    border-radius: 3px;
+    text-align: center;
+    width: 70px;
+    position: absolute;
+    bottom: -12px;
+    left: -1%;
+    margin: auto;
+}
 
 .tip {
     background: url(./images/bunny.gif) no-repeat center;
@@ -377,6 +411,11 @@ body::before {
     color: rgb(255, 255, 255);
 }
 
+.update-window {
+    top: 215px;
+    left: 860px;
+}
+
 .tip-content {
     font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #696969;
@@ -416,6 +455,10 @@ body::before {
 }
 
 #common {
+ font-size: 20px;
+}
+
+#matcha-tab {
  font-size: 20px;
 }
 
@@ -537,6 +580,10 @@ body::before {
 .aboutme1::-webkit-scrollbar { width: 10px; }
 .aboutme1::-webkit-scrollbar-track { background: #f5f5f5; }
 .aboutme1::-webkit-scrollbar-thumb { background:#edcfda; border-radius: 6px; }
+.aboutme3::-webkit-scrollbar { width: 10px; }
+.aboutme3::-webkit-scrollbar-track { background: #f5f5f5; }
+.aboutme3::-webkit-scrollbar-thumb { background:#edcfda; border-radius: 6px; }
+
 
 .tab-panel {
     display: none;
@@ -562,6 +609,7 @@ body::before {
     position: relative;
 
 }
+
 .aboutme1 {
     height: 350px;
     background-size: 400px;
@@ -575,7 +623,155 @@ body::before {
     line-height: 1.5;
     position: relative;
     overflow-y:scroll;
-      overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+.matcha-toc {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 18px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted #d8c7cf;
+    align-items: start;
+}
+
+.matcha-kicker {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0 0 2px;
+    color: rgba(0, 0, 0, 0.42);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+}
+
+.matcha-toc a {
+    color: rgb(211, 175, 189);
+    font-size: 15px;
+    display: block;
+    text-align: center;
+}
+
+.matcha-toc a:hover {
+    color: rgb(231, 201, 213);
+}
+
+.matcha-section {
+    padding-top: 8px;
+    margin-bottom: 24px;
+}
+
+.matcha-section > h2 {
+    margin: 0 0 8px;
+    text-align: center;
+    color:rgb(204, 146, 171);
+    font-weight: 400;
+}
+
+.matcha-section > h3 {
+    margin: 0 0 8px;
+    text-align: center;
+    color:rgb(206, 147, 173);
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.hp {
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color:rgb(213, 160, 181);
+} 
+
+.hs {
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color:rgb(223, 181, 199);
+} 
+
+.matcha-section p {
+    margin: 0 0 10px;
+}
+
+.matcha-intro-image {
+    display: block;
+    margin: 1px auto 0;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
+#matcha-intro {
+    text-align: center;
+    
+}
+
+.aboutme3 {
+    height: 350px;
+    background-size: 400px;
+    background-position-x: 225px;
+    background-repeat: no-repeat;
+	font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #696969;
+    text-align: justified;
+    padding: 0px 20px;
+    line-height: 1.5;
+    position: relative;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+}
+
+.aboutme3.no-scroll {
+    overflow-y: hidden;
+    padding-right: 30px;
+}
+
+.matcha-subtabs {
+    min-height: 100%;
+}
+
+.matcha-subtab-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 4px 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted #d8c7cf;
+}
+
+.matcha-subtab-btn {
+    border: 1px solid #e6c7d3;
+    background-color: #fff7fa;
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    cursor: url(./cursors/pointer.cur), pointer;
+}
+
+.matcha-subtab-btn:hover {
+    background-color: #fff0f5;
+}
+
+.matcha-subtab-btn.active {
+    background-color: #edcfda;
+    color: #ffffff;
+    border-color: #edcfda;
+}
+
+.matcha-subtab-panel {
+    display: none;
+}
+
+.matcha-subtab-panel.active {
+    display: block;
 }
 
 /* kins grid */
@@ -640,21 +836,13 @@ padding-top: 4px;
     pointer-events: none;
 }
 
-/* .aboutme2 {
-    height: 360px;
-    background-size: 400px;
-    background-position-x: 225px;
-    background-repeat: no-repeat;
-	font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14;
-    color: #696969;
-    padding-right: 180px;
-    text-align: center;
-    line-height: 1.5;
-    position: relative;
-} */
 
 .aboutme > h2 {
+    text-align: left;
+    padding-left: 45px;
+}
+
+.aboutme3 > h2 {
     text-align: left;
     padding-left: 45px;
 }
@@ -755,6 +943,7 @@ padding-top: 4px;
     font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
     color:rgb(206, 147, 173);
 }
+
 
 
 /* my cat page */

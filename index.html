@@ -32,7 +32,7 @@ feel free to take inspo from my website! ^_^
 -->
 
 <head>
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quwrof⋅˚₊‧𐙚</title>
@@ -49,6 +49,12 @@ feel free to take inspo from my website! ^_^
  <div class="box1">
  <h2>welcome to my website!</h2>
 
+
+ <button class="update" onclick="clickSound();"></button>
+ <span class="updates">
+    updates
+ </span>
+
  <button class="tip" onclick="clickSound();"></button>
  <span class="tips">
     tips
@@ -57,7 +63,7 @@ feel free to take inspo from my website! ^_^
 <audio id="clicksound" src="sound/click.mp3" autostart="false"></audio>
  <button class="wip1" onclick="clickSound();"></button>
  <span class="hide">
-    wip
+    notes
 </span>
 
  <button class="about" onclick="clickSound();"></button>
@@ -89,6 +95,24 @@ feel free to take inspo from my website! ^_^
                 <p>you can drag windows by the top bar.</p>
                 <p>hover over underlined text for notes.</p>
                 <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="updateWindow" class="bomboclaat tip-window update-window">
+    <div class="window-top">
+        <button class="tab-btn active" data-tab="updates"><p>updates</p></button>
+        <button class="close" onclick="closeSound();">
+            <p>x</p>
+        </button>
+    </div>
+
+    <div class="window-content">
+        <div class="tab-panel active" data-tab="updates">
+            <div class="tip-content">
+                <p>added matcha notes page! click the left wing ♡ <br> - 16.03.26
+                </p>
             </div>
         </div>
     </div>
@@ -235,10 +259,9 @@ feel free to take inspo from my website! ^_^
 
 </div>
 
-<!-- <div id="Window2" class="bomboclaat">
+<div id="Window2" class="bomboclaat">
     <div class="window-top">
-        <button id="common" class="tab-btn active" data-tab="intro"><p>notes</p></button>
-        <button class="tab-btn" data-tab="matcha"><p>matcha recipes</p></button>
+        <button id="matcha-tab" class="tab-btn" data-tab="matcha"><p>matcha</p></button>
         <button class="tab-btn" data-tab="typology"><p>wip</p></button>
         <button class="tab-btn" data-tab="todo"><p>wip</p></button>
 <audio id="closesound" src="sound/close.mp3" autostart="false"></audio>
@@ -250,18 +273,183 @@ feel free to take inspo from my website! ^_^
 
   <div id="content1" class="window-content">
 
-    <div class="tab-panel active" data-tab="intro">
-      <div class="aboutme1">
-        <h2>notes...</h2>
-        <p>“A small collection of things I like.
-            <br>Hobbies, recipes and other finds</p>
-        <div id="tooltip" class="tooltip"></div>
-      </div>
-    </div>
 
     <div class="tab-panel" data-tab="matcha">
-      <div class="aboutme1">
-        <p>wip</p>
+      <div class="aboutme3">
+        <div class="matcha-subtabs" data-subtabs>
+          <div class="matcha-subtab-bar">
+            <button class="matcha-subtab-btn active" type="button" data-subtab="intro">intro</button>
+            <button class="matcha-subtab-btn" type="button" data-subtab="reviews">reviews</button>
+            <button class="matcha-subtab-btn" type="button" data-subtab="recipes">recipes</button>
+          </div>
+
+          <div class="matcha-subtab-panel active" data-subtab="intro">
+            <section id="matcha-intro" class="matcha-section">
+              <h2>matcha notes</h2>
+              <p>this is a little corner for matcha things<br>i like and recipes i keep coming back to.</p>
+              <img class="matcha-intro-image" src="images/Matcha.png" alt="matcha">
+            </section>
+          </div>
+
+          <div class="matcha-subtab-panel" data-subtab="reviews">
+            <div class="matcha-toc">
+              <p class="matcha-kicker">table of contents</p>
+              <a href="#matcha-ikuyo" data-scroll-target="matcha-ikuyo">ikuyo - ippodo</a>
+              <a href="#matcha-isuzu" data-scroll-target="matcha-isuzu">isuzu - marukyu koyamaen</a>
+              <a href="#matcha-kyogoku" data-scroll-target="matcha-kyogoku">kyogoku no mukashi - ippodo</a>
+              <a href="#matcha-heian" data-scroll-target="matcha-heian">heian kyo - fukujuen</a>
+              <a href="#matcha-kagoshima" data-scroll-target="matcha-kagoshima">kagoshima - noritual lab</a>
+              <a href="#matcha-ryoku" data-scroll-target="matcha-ryoku">ryoku - noritual lab</a>
+              <a href="#matcha-okumidori" data-scroll-target="matcha-okumidori">okumidori - unknown</a>
+              <a href="#matcha-seimei" data-scroll-target="matcha-seimei">seimei - unknown</a>
+              <a href="#matcha-uji" data-scroll-target="matcha-uji">uji premium - yoshi en</a>
+              <a href="#matcha-haruno" data-scroll-target="matcha-haruno">haruno - yoshi en</a>
+              
+
+            </div>
+
+            <section id="matcha-ikuyo" class="matcha-section">
+              <h3>ikuyo - ippodo</h3>
+              <p><span class="hp">aroma: </span>kinda nutty and deep, milky<br>
+              <span class="hp">taste: </span>buttery/creamy, sweet, mild, slight bitterness, a little toasty or earthy</p>
+            </section>
+
+            <section id="matcha-isuzu" class="matcha-section">
+              <h3>isuzu - marukyu koyamaen</h3>
+              <p><span class="hp">aroma: </span>vegetal, mellow, fresh, nutty<br>
+              <span class="hp">taste: </span>fresh, yuzu, sweet, slight umami, slightly floral, creamy<br>
+              <span class="hp">in latte: </span> toasted rice / nutty / sesame, no astringency, slight bitternesss</p>
+            </section>
+
+            <section id="matcha-kyogoku" class="matcha-section">
+              <h3>kyogoku no mukashi - ippodo</h3>
+              <p><span class="hp">aroma: </span>umami, marine, seaweed<br>
+              <span class="hp">taste: </span>umami, deep, toasty, nutty, oceanic/seaweedy, no bitterness, natural sweetness</p>
+            </section>
+
+            <section id="matcha-heian" class="matcha-section">
+              <h3>heian kyo - fukujuen</h3>
+              <p><span class="hp">aroma: </span>sweet, creamy, a little fruity/fresh, nutty<br>
+              <span class="hp">taste: </span>buttery, rich, deepness of a rich hot chocolate, creamy, no astringency, no bitterness, sweet, a little vegetal</p>
+            </section>
+
+            <section id="matcha-kagoshima" class="matcha-section">
+              <h3>kagoshima - noritual lab</h3>
+              <p><span class="hp">aroma: </span>sweet, nutty, creamy<br>
+              <span class="hp">taste: </span>sweet, deep, nutty, bitter, hint of milkiness, minimal astringency, milk chocolate aftertaste</p>
+            </section>
+
+            <section id="matcha-ryoku" class="matcha-section">
+              <h3>ryoku - noritual lab</h3>
+              <p><span class="hp">aroma: </span>sweet and nutty<br>
+              <span class="hp">taste: </span>deep, roasty, sweet, nutty, very astringent, tastes kinda like soy</p>
+            </section>
+
+            <section id="matcha-okumidori" class="matcha-section">
+              <h3>okumidori - unknown</h3>
+              <p><span class="hp">aroma: </span>creamy, mild, sweet<br>
+              <span class="hp">taste: </span>mild, buttery, sweet, creamy, no bitterness, smooth, reminiscent of soft serve</p>
+            </section>
+
+            <section id="matcha-seimei" class="matcha-section">
+              <h3>seimei - unknown</h3>
+              <p><span class="hp">aroma: </span>n/a<br>
+              <span class="hp">taste: </span>hint of sweetness, little to no astringency, deep flavor, nutty and toasty, reminiscent of a deep forest, earthy, dark chocolatey </p>
+            </section>
+
+            <section id="matcha-uji" class="matcha-section">
+              <h3>uji premium - yoshi en</h3>
+              <p><span class="hp">aroma: </span>n/a<br>
+              <span class="hp">taste: </span>sweet, milky (reminiscent of milky oolong), hints of nutty sesame and vanilla, deep, umami, moderate astringency</p>
+            </section>
+
+            <section id="matcha-haruno" class="matcha-section">
+              <h3>haruno - yoshi en</h3>
+              <p><span class="hp">aroma: </span>n/a<br>
+              <span class="hp">taste: </span>sweet, creamy, some bitterness</p>
+            </section>
+
+          </div>
+
+          <div class="matcha-subtab-panel" data-subtab="recipes">
+            <div class="matcha-toc">
+              <p class="matcha-kicker">table of contents</p>
+              <a href="#matcha-basic" data-scroll-target="matcha-basic">classic matcha latte</a>
+              <a href="#matcha-straw" data-scroll-target="matcha-straw">strawberry matcha</a>
+              <a href="#matcha-black" data-scroll-target="matcha-black">milk tea matcha</a>
+              <a href="#matcha-condensed" data-scroll-target="matcha-condensed">condensed milk matcha</a>
+              <a href="#matcha-banana" data-scroll-target="matcha-banana">banana milk matcha</a>
+              <a href="#matcha-jas" data-scroll-target="matcha-jas">jasmine milk tea matcha</a>
+            </div>
+ 
+            <section id="matcha-basic" class="matcha-section">
+              <h3>classic matcha latte</h3>
+              <p><span class="hp">ingredients</span><br>
+                <span class="hs">matcha:</span> 3-4g matcha, 15ml room temp water, 30ml 75℃ water<br>
+                <span class="hs">milk:</span> 120 ml oat milk</p>
+              <p><span class="hp">method</span><br>
+                <span class="hs">matcha:</span> sift the matcha into a bowl, add room temp water to the matcha and create a paste, then add hot water and whisk until you achieve a microfoam.<br>
+                <span class="hs">assemble!</span> fill a glass with ice if desired. pour in the milk, then slowly add the matcha on top. done!</p>
+            </section>
+
+            <section id="matcha-straw" class="matcha-section">
+              <h3>strawberry matcha</h3>
+              <p><span class="hp">ingredients</span><br>
+                <span class="hs">matcha:</span> 3-4g matcha, 15ml room temp water, 30ml 75℃ water<br>
+                <span class="hs">milk:</span> 120 ml oat milk, strawberry syrup</p>
+              <p><span class="hp">method</span><br>
+                <span class="hs">matcha:</span> sift the matcha into a bowl, add room temp water to the matcha and create a paste, then add hot water and whisk until you achieve a microfoam.<br>
+                <span class="hs">assemble!</span> fill a glass with ice if desired. pour in the strawberry syrup, then milk, then slowly add the matcha on top. done!</p>
+            </section>
+
+            <section id="matcha-black" class="matcha-section">
+              <h3>milk tea matcha with black tea cold foam</h3>
+              <p><span class="hp">ingredients</span><br>
+                <span class="hs">matcha:</span> 3-4g matcha, 15ml room temp water, 30ml 75℃ water<br>
+                <span class="hs">milk tea:</span> 120ml oatmilk, 2 tsp black tea, 2 tsp sugar<br>
+                <span class="hs">cold foam:</span> 3 tbs cream, 2 tbs milk, 1 tbs black tea syrup</p>
+              <p><span class="hp">method</span><br>
+                <span class="hs">milk tea:</span> brew the black tea in oat milk on medium heat, then add sugar.<br>
+                <span class="hs">matcha:</span> sift the matcha into a bowl, add room temp water to the matcha and create a paste, then add hot water and whisk until you achieve a microfoam.<br>
+                <span class="hs">cold foam:</span> combine all cold foam ingredients in a bowl and whisk until thick and creamy.<br>
+                <span class="hs">assemble!</span> fill a glass with ice if desired. pour in the milk tea, then slowly add the matcha on top. finish with the cold foam. done!</p>
+            </section>
+
+            <section id="matcha-banana" class="matcha-section">
+              <h3>banana milk matcha</h3>
+              <p><span class="hp">ingredients</span><br>
+                <span class="hs">matcha:</span> 3-4g matcha, 15ml room temp water, 30ml 75℃ water<br>
+                <span class="hs">banana milk:</span> 120ml oat milk, 1/4 banana, 1 tsp vanilla sugar</p>
+              <p><span class="hp">method</span><br>
+                <span class="hs"> banana milk:</span> add the oatmilk, banana, and vanilla to a blender and blend until smooth and creamy.<br>
+                <span class="hs">matcha:</span> sift the matcha into a bowl, add room temp water to the matcha and create a paste, then add hot water and whisk until you achieve a microfoam.<br>
+                <span class="hs">assemble!</span> fill a glass with ice if desired. pour in the banana milk, then slowly add the matcha on top. done!</p>
+            </section>
+
+            <section id="matcha-condensed" class="matcha-section">
+              <h3>condensed milk matcha</h3>
+              <p><span class="hp">ingredients</span><br>
+                <span class="hs">matcha:</span> 3-4g matcha, 15ml room temp water, 30ml 75℃ water<br>
+                <span class="hs">milk:</span> 120 ml oat milk, 1-2 tsp condensed milk</p>
+              <p><span class="hp">method</span><br>
+                <span class="hs">milk:</span> add the condensed milk to a glass. pour in a small splash of oat milk and stir until the condensed milk dissolves. add the remaining oat milk.<br>
+                <span class="hs">matcha:</span> sift the matcha into a bowl, add room temp water to the matcha and create a paste, then add hot water and whisk until you achieve a microfoam.<br>
+                <span class="hs">assemble!</span> fill a glass with ice if desired. pour in the milk mixture, then slowly add the matcha on top. done!</p>
+            </section>
+
+            <section id="matcha-jas" class="matcha-section">
+              <h3>jasmine milk tea matcha</h3>
+              <p><span class="hp">ingredients</span><br>
+                <span class="hs">matcha:</span> 3-4g matcha, 15ml room temp water, 30ml 75℃ water<br>
+                <span class="hs">milk tea:</span> 100ml oatmilk, 2 tsp jasmine tea, 30ml 75℃ water, 2 tsp sugar<br>
+              <p><span class="hp">method</span><br>
+                <span class="hs">milk tea:</span> steep the jasmine tea in 75℃ water for a few minutes. stir in the sugar, then pour in the oat milk.<br>
+                <span class="hs">matcha:</span> sift the matcha into a bowl, add room temp water to the matcha and create a paste, then add hot water and whisk until you achieve a microfoam.<br>
+                <span class="hs">assemble!</span> fill a glass with ice if desired. pour in the jasmine milk tea, then slowly add the matcha on top. done!</p>
+            </section>
+
+          </div>
+        </div>
       </div>
     </div>
 
@@ -279,7 +467,7 @@ feel free to take inspo from my website! ^_^
 
   </div>
 
-</div> -->
+</div>
 
  <!--  <div id="Window3" class="bomboclaat">
     <div class="window-top">
