@@ -550,10 +550,22 @@ body::before {
     animation: popIn 0.18s cubic-bezier(0, 0.8, 0.2, 1) forwards;
     pointer-events: auto;
 }
+
+.bomboclaat.closing {
+    display: block;
+    animation: popOut 0.18s cubic-bezier(0.4, 0, 1, 1) forwards;
+    pointer-events: none;
+}
+
 @keyframes popIn {
   0%   { transform: scale(0.01); }
   /* 80%  { transform: scale(1.02); } */
   100% { transform: scale(1); }
+}
+
+@keyframes popOut {
+  0%   { transform: scale(1); }
+  100% { transform: scale(0.01); }
 }
 
 /* about window */

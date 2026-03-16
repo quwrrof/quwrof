@@ -6,7 +6,6 @@ const tipWindow = document.querySelector('#tipWindow');
 const updateWindow = document.querySelector('#updateWindow');
 const mainBox = document.querySelector('.box');
 let zCounter = 10;
-let previousMainBoxRect = mainBox ? mainBox.getBoundingClientRect() : null;
 
 
 // sounds
@@ -33,9 +32,43 @@ function bringToFront(el) {
     el.style.zIndex = zCounter;
 }
 
+function syncWindowOffset(el) {
+    if (!el || !mainBox) return;
+
+    const mainBoxRect = mainBox.getBoundingClientRect();
+    const currentLeft = parseFloat(el.style.left || window.getComputedStyle(el).left);
+    const currentTop = parseFloat(el.style.top || window.getComputedStyle(el).top);
+
+    if (Number.isNaN(currentLeft) || Number.isNaN(currentTop)) {
+        return;
+    }
+
+    el.dataset.offsetX = String(currentLeft - mainBoxRect.left);
+    el.dataset.offsetY = String(currentTop - mainBoxRect.top);
+}
+
+function showWindow(el) {
+    if (!el) return;
+    el.classList.remove('closing');
+    el.classList.add('show');
+}
+
+function hideWindow(el) {
+    if (!el || !el.classList.contains('show')) return;
+
+    el.classList.remove('show');
+    el.classList.add('closing');
+
+    window.setTimeout(() => {
+        el.classList.remove('closing');
+    }, 180);
+}
+
 function clampWindowPosition(el, left, top) {
-    const maxLeft = Math.max(0, window.innerWidth - el.offsetWidth);
-    const maxTop = Math.max(0, window.innerHeight - el.offsetHeight);
+    const width = el.offsetWidth || parseFloat(window.getComputedStyle(el).width) || 0;
+    const height = el.offsetHeight || parseFloat(window.getComputedStyle(el).height) || 0;
+    const maxLeft = Math.max(0, window.innerWidth - width);
+    const maxTop = Math.max(0, window.innerHeight - height);
 
     return {
         left: Math.min(Math.max(0, left), maxLeft),
@@ -43,36 +76,35 @@ function clampWindowPosition(el, left, top) {
     };
 }
 
+function setWindowPosition(el, left, top, options = {}) {
+    if (!el) return;
+
+    const { syncOffset = true } = options;
+    const nextPosition = clampWindowPosition(el, left, top);
+
+    el.style.left = nextPosition.left + 'px';
+    el.style.top = nextPosition.top + 'px';
+
+    if (syncOffset) {
+        syncWindowOffset(el);
+    }
+}
+
 function moveWindowsWithMainBox() {
     if (!mainBox) return;
 
-    const nextMainBoxRect = mainBox.getBoundingClientRect();
-
-    if (!previousMainBoxRect) {
-        previousMainBoxRect = nextMainBoxRect;
-        return;
-    }
-
-    const deltaX = nextMainBoxRect.left - previousMainBoxRect.left;
-    const deltaY = nextMainBoxRect.top - previousMainBoxRect.top;
-
-    previousMainBoxRect = nextMainBoxRect;
-
-    if (!deltaX && !deltaY) {
-        return;
-    }
+    const mainBoxRect = mainBox.getBoundingClientRect();
 
     windows.forEach(win => {
-        const currentLeft = parseFloat(win.style.left || window.getComputedStyle(win).left);
-        const currentTop = parseFloat(win.style.top || window.getComputedStyle(win).top);
+        const offsetX = Number(win.dataset.offsetX);
+        const offsetY = Number(win.dataset.offsetY);
 
-        if (Number.isNaN(currentLeft) || Number.isNaN(currentTop)) {
+        if (Number.isFinite(offsetX) && Number.isFinite(offsetY)) {
+            setWindowPosition(win, mainBoxRect.left + offsetX, mainBoxRect.top + offsetY, { syncOffset: false });
             return;
         }
 
-        const nextPosition = clampWindowPosition(win, currentLeft + deltaX, currentTop + deltaY);
-        win.style.left = nextPosition.left + 'px';
-        win.style.top = nextPosition.top + 'px';
+        syncWindowOffset(win);
     });
 }
 
@@ -93,8 +125,7 @@ function positionSmallWindow(triggerBtn, popupWindow, offsets) {
     left = Math.min(Math.max(margin, left), maxLeft);
     top = Math.min(Math.max(margin, top), maxTop);
 
-    popupWindow.style.left = left + 'px';
-    popupWindow.style.top = top + 'px';
+    setWindowPosition(popupWindow, left, top);
 }
 
 // switching between tabs
@@ -254,9 +285,7 @@ function elementDrag(e) {
     let newTop = element.offsetTop - currentPosY;
     let newLeft = element.offsetLeft - currentPosX;
 
-    const nextPosition = clampWindowPosition(element, newLeft, newTop);
-    element.style.top = nextPosition.top + 'px';
-    element.style.left = nextPosition.left + 'px';
+    setWindowPosition(element, newLeft, newTop);
 }
 
     function closeDragElement () {
@@ -271,7 +300,7 @@ const aboutBtn = document.querySelector('.about');
 if (aboutBtn && windowEl) {
     aboutBtn.addEventListener('click', () => {
         setActiveTab(windowEl, 'about');
-        windowEl.classList.add('show');
+        showWindow(windowEl);
         bringToFront(windowEl);
     });
 }
@@ -282,7 +311,7 @@ if (tipBtn && tipWindow) {
         positionSmallWindow(tipBtn, tipWindow, { x: -60, y: -212 });
 
         setActiveTab(tipWindow, 'tip');
-        tipWindow.classList.add('show');
+        showWindow(tipWindow);
         bringToFront(tipWindow);
     });
 }
@@ -293,7 +322,7 @@ if (updateBtn && updateWindow) {
         positionSmallWindow(updateBtn, updateWindow, { x: -40, y: -210 });
 
         setActiveTab(updateWindow, 'updates');
-        updateWindow.classList.add('show');
+        showWindow(updateWindow);
         bringToFront(updateWindow);
     });
 }
@@ -302,7 +331,7 @@ const wipBtn = document.querySelector('.wip1');
 if (wipBtn && windowEk) {
     wipBtn.addEventListener('click', () => {
         setActiveTab(windowEk, 'matcha');
-        windowEk.classList.add('show');
+        showWindow(windowEk);
         bringToFront(windowEk);
     });
 }
@@ -311,7 +340,7 @@ const wip2Btn = document.querySelector('.wip2');
 if (wip2Btn && windowEk) {
     wip2Btn.addEventListener('click', () => {
         setActiveTab(windowEj, 'random');
-        windowEj.classList.add('show');
+        showWindow(windowEj);
         bringToFront(windowEj);
     });
 }
@@ -320,9 +349,11 @@ windows.forEach(win => {
     initWindow(win);
     makeDraggable(win);
     win.addEventListener('mousedown', () => bringToFront(win));
+    syncWindowOffset(win);
 });
 
 initMatchaSubtabs();
+moveWindowsWithMainBox();
 
 window.addEventListener('resize', moveWindowsWithMainBox);
 
@@ -331,6 +362,6 @@ window.addEventListener('resize', moveWindowsWithMainBox);
 document.addEventListener('click', e => {
     const win = e.target.closest('.bomboclaat');
     if (e.target.closest('.close') && win) {
-        win.classList.remove('show');
+        hideWindow(win);
     }
 });
