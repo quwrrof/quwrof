@@ -102,7 +102,7 @@ body {
     height: 370px;
     background-color: rgb(255, 255, 255, 0.5);
     margin: auto;
-    background-image: url(./images/Veil\ Emma\ Sea.png);
+    background-image: url(./images/Veil\ Emma\ Sea.webp);
     background-size: 270px;
     background-position-x: 300px;
     background-position-y: -20px;
@@ -110,7 +110,7 @@ body {
     background-repeat: no-repeat;
     border-radius: 7px;
     border: 15px solid transparent;
-    border-image-source: url(./images/lace-g.png) !important;
+    border-image-source: url(./images/lace-g.webp) !important;
     border-image-slice: 5 !important;
     border-image-width: 6px !important;
     border-image-repeat: round !important;
@@ -175,7 +175,7 @@ body {
 /* buttons */
 
 .update {
-    background: url(./images/waterg.gif) no-repeat center;
+    background: url(./images/waterg.webp) no-repeat center;
     background-size: 100%;
     background-color: #ffffff64;
     width: 30px;
@@ -212,7 +212,7 @@ body {
 .about {
     flex: 50%;
     margin: auto;
-    background: url(./images/plumeria1.gif) no-repeat center;
+    background: url(./images/plumeria1.webp) no-repeat center;
     background-size: 50px;
     width: 50px;
     height: 50px;
@@ -255,7 +255,7 @@ body {
 }
 
 .music-toggle {
-    background: url(./images/orange.gif) no-repeat center;
+    background: url(./images/orange.webp) no-repeat center;
     background-size: 100%;
     width: 40px;
     height: 40px;
@@ -554,7 +554,7 @@ body {
     margin-top: 6px;
     border-radius: 7px;
     border: 1px solid transparent;
-    border-image-source: url(./images/lace-g.png) !important;
+    border-image-source: url(./images/lace-g.webp) !important;
     border-image-slice: 5 !important;
     border-image-width: 6px !important;
     border-image-repeat: round !important;
@@ -588,7 +588,7 @@ body {
     width: 270px;
     inset: -70px -10px;
     background-color: rgb(255, 255, 255, 0.5);
-    background-image: url(./images/emma.png);
+    background-image: url(./images/emma.webp);
     background-size: 315px;
     background-position-x: 0px;
     background-position-y: 10px;
@@ -786,7 +786,7 @@ body {
     padding-left: 45px;
 }
 
-/* text gifs */
+/* text webps */
 .img {
     display: inline-block;
     width: 20px;
@@ -798,33 +798,33 @@ body {
 }
 
 .img1 {
-    background-image: url(./images/fish.gif);
+    background-image: url(./images/fish.webp);
 }
 
 .img2 {
-    background-image: url(./images/panda.gif);
+    background-image: url(./images/monkey.webp);
 }
 
 .img3 {
-    background-image: url(./images/cat.gif);
+    background-image: url(./images/cat.webp);
 }
 
 .img4 {
-    background-image: url(./images/banan.gif);
+    background-image: url(./images/banan.webp);
 }
 
 .img5 {
-    background-image: url(./images/wing2l.gif);
+    background-image: url(./images/wing2l.webp);
     width:26px;
 }
 
 .img6 {
-    background-image: url(./images/wing2r.gif);
+    background-image: url(./images/wing2r.webp);
     width:26px;
 }
 
 .img7 {
-    background-image: url(./images/mienshao.png);
+    background-image: url(./images/mienshao.webp);
     width: 25px;
     height: 23px;
     background-size: 25px;
@@ -832,7 +832,7 @@ body {
 }
 
 .img8 {
-    background-image: url(./images/sylveon.png);
+    background-image: url(./images/sylveon.webp);
     width: 25px;
     height: 23px;
     background-size: 23px;
@@ -840,7 +840,7 @@ body {
 }
 
 .img9 {
-    background-image: url(./images/glaceon.png);
+    background-image: url(./images/glaceon.webp);
     width: 27px;
     height: 23px;
     background-size: 27px;
@@ -848,24 +848,24 @@ body {
 }
 
 .img10 {
-    background-image: url(./images/catt.gif);
+    background-image: url(./images/catt.webp);
 }
 
 .img11 {
-    background-image: url(./images/cattt.gif);
+    background-image: url(./images/cattt.webp);
 }
 
 .img12 {
-    background-image: url(./images/cat.gif);
+    background-image: url(./images/cat.webp);
 }
 
 .img13 {
-    background-image: url(./images/plumeria.gif);
+    background-image: url(./images/plumeria.webp);
     background-blend-mode:soft-light
 }
 
 .img14 {
-    background-image: url(./images/hibi.gif);
+    background-image: url(./images/hibi.webp);
 }
 
 /* favorites tab */
@@ -931,7 +931,7 @@ body {
     background-color: rgb(225, 242, 255);
     border-radius: 7px;
     border: 15px solid transparent;
-    border-image-source: url(./images/lace-g.png) !important;
+    border-image-source: url(./images/lace-g.webp) !important;
     border-image-slice: 5 !important;
     border-image-width: 6px !important;
     border-image-repeat: round !important;
