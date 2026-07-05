@@ -909,7 +909,7 @@ body {
   left: 50%;
   width: 230px;
   height: 230px;
-  background: url(./images/nomnom.png) no-repeat center;
+  background: url(./images/nomnom.webp) no-repeat center;
   background-size: 150px;
   pointer-events: none;
   transform: translate(-50%, -50%) rotate(10deg);
@@ -918,7 +918,7 @@ body {
 .round2 {
   position: absolute;
   inset: 0;
-  background: url(./images/frame.png) center/100% 100% no-repeat;
+  background: url(./images/frame.webp) center/100% 100% no-repeat;
   pointer-events: none;
 }
 
