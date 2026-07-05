@@ -742,7 +742,6 @@ body {
     justify-content: center;
     gap: 10px;
     margin: 7px 0 18px;
-    padding-left: 14px;
     padding-bottom: 12px;
     border-bottom: 1px dotted rgb(245, 214, 115);
 }
@@ -866,6 +865,10 @@ body {
 
 .img14 {
     background-image: url(./images/hibi.webp);
+}
+
+.img15 {
+    background-image: url(./images/cat.webp);
 }
 
 /* favorites tab */
