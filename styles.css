@@ -1,26 +1,35 @@
 @font-face {
-  font-family: Kosugi Maru; /* set name */
-  src: url(fonts/KosugiMaru-Regular.ttf); /* url of the font */
+  font-family: Cause; /* set name */
+  src: url(fonts/Cause-SemiBold.ttf); /* url of the font */
+}
+
+#sea {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
 }
 
 /* text selection */
 *::selection { 
-    color: #ecbdcd;
+    color: #a6d0f7;
 }
 
 /* links */
 a:hover {
-  color: rgb(231, 201, 213);
+  color: #b6d7f4;
   cursor: url(./cursors/pointer.cur), pointer;
 }
 a {
-    color:rgb(196, 132, 158);
+    color:#76aee2;
     text-decoration: none;
     transition: color 0.15s ease;
 }
 
 .discord-link-color {
-    color: rgb(196, 132, 158);
+    color: #76aee2;
 }
 
 .tooltip-target.discord-link-color {
@@ -33,16 +42,16 @@ html {
         height: 100%;
 }
 
-
+/* 
 body {
     scroll-behavior: smooth !important;
     background-color: #00000000;
     overflow: hidden;
     height: 100%;
-}
+} */
 
 /* crt effect */
-body::before {
+/* body::before {
     content: " ";
     display: block;
     position: fixed;
@@ -54,7 +63,7 @@ body::before {
     z-index: 9999;
     background-size: 100% 2px, 3px 100%;
     pointer-events: none
-}
+} */
 
 
 /*--------------------------------------------------*/
@@ -62,12 +71,12 @@ body::before {
 .box {
     width: 600px;
     height: 435px;
-    border: 1px solid #c5c5c5;
+    border: 1px solid #ffffff;
     background-image: radial-gradient(rgb(255, 255, 255) 22%, transparent 28%),
     radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
     background-position: 0px 0px, 10px 10px;
     background-size: 20px 20px;
-    background-color: rgb(245, 245, 245);
+    background-color: rgba(225, 242, 255, 0.491);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 0px;
@@ -91,12 +100,12 @@ body::before {
 .box1 {
     width: 535px;
     height: 370px;
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: rgb(255, 255, 255, 0.5);
     margin: auto;
-    background-image: url(./images/chii.jpg);
-    background-size: 260px;
-    background-position-x: -20px;
-    background-position-y: 40px;
+    background-image: url(./images/Veil\ Emma\ Sea.png);
+    background-size: 270px;
+    background-position-x: 300px;
+    background-position-y: -20px;
     background-blend-mode: lighten;
     background-repeat: no-repeat;
     border-radius: 7px;
@@ -112,13 +121,24 @@ body::before {
 }
 
 .box1 > h2 {
+    position: relative;
+    z-index: 1;
     font-size: 45px;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #808080;
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #578dc0;
     font-weight: 400;
     font-style: normal;
     text-align: center;
     margin-top: -5px;
+    text-shadow:
+     -1.5px -1.5px 0 #ffffff,
+      0   -1.5px 0 #ffffff,
+      1.5px -1.5px 0 #ffffff,
+      1.5px  0   0 #ffffff,
+      1.5px  1.5px 0 #ffffff,
+      0    1.5px 0 #ffffff,
+     -1.5px  1.5px 0 #ffffff,
+     -1.5px  0   0 #ffffff;
 }
 
 .tab {
@@ -130,7 +150,7 @@ body::before {
     margin-top: 100px;
     margin-bottom: 0px;
     padding: 0px;
-    background-color: #c1c1c1;
+    background-color: rgb(126, 181, 226);
 }
 
 .tab > p {
@@ -138,15 +158,15 @@ body::before {
     padding-right: 15px;
     padding-top: 6px;
     font-size: 20px;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
     color: white;
     font-weight: 500;
 }
 
 #undertxt {
     font-size: 12px;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: rgba(0, 0, 0, 0.217);
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: rgba(255, 255, 255, 0.5);
     text-align: center;
     margin: 0;
 }
@@ -155,18 +175,20 @@ body::before {
 /* buttons */
 
 .update {
-    background: url(./images/mail.gif) no-repeat center;
+    background: url(./images/waterg.gif) no-repeat center;
     background-size: 100%;
+    background-color: #ffffff64;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    background-blend-mode: lighten;
     border: none;
     padding: 0;
     border-radius: 20%;
     cursor: url(./cursors/pointer.cur), pointer;
     margin: auto;
     position: absolute;
-    bottom: 2%;
+    bottom: 1.5%;
     left: 2%;
 }
 
@@ -175,126 +197,50 @@ body::before {
 }
 
 .updates {
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.405);
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #6ba5dc;
     border-radius: 3px;
     text-align: center;
     width: 70px;
     position: absolute;
     bottom: -12px;
-    left: -1%;
+    left: -1.5%;
     margin: auto;
-}
-
-.tip {
-    background: url(./images/bunny.gif) no-repeat center;
-    background-size: 100%;
-    width:30px;
-    height:30px;
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    border-radius: 20%;
-    cursor: url(./cursors/pointer.cur), pointer;
-    margin: auto;
-    position: absolute;
-    bottom: 2%;
-    left: 94%;
-}
-
-.tip:hover {
-    transform: scale(1.1);
-}
-
-.tips {
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.405);
-    border-radius: 3px;
-    text-align: center;
-    width: 40px;
-    position: absolute;
-    bottom: -12px;
-    left: 93.1%;
-    margin: auto; 
-}
-
-.wip1 {
-    flex: 50%;
-    margin: auto;
-    background: url(./images/wingl.gif) no-repeat center;
-    background-size: 70px;
-    width: 70px;
-    height: 60px;
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    border-radius: 30%;
-    /* transition: all 0.3s ease-in-out; */
-    /* margin-right: 30px; */
-    cursor: url(./cursors/pointer.cur), pointer;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 25%; 
-}
-
-.hide {
-    display: none;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    background-color: #ffe6ef00;
-    color: rgba(0, 0, 0, 0.405);
-    border-radius: 3px;
-    text-align: center;
-    width: 80px;
-    position: absolute;
-    top: 67%;
-    left: 25%;
-    margin: auto;
-}
-
-.wip1:hover {
-    transform: scale(1.1);
-}
-
-.wip1:hover + .hide {
-    display: block;
 }
 
 .about {
     flex: 50%;
     margin: auto;
-    background: url(./images/bow.gif) no-repeat center;
-    background-size: 63px;
-    width: 63px;
-    height: 63px;
+    background: url(./images/plumeria1.gif) no-repeat center;
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     border: none;
-    padding: 0;
+    padding: 0px;
     /* transition: all 0.3s ease-in-out; */
     /* margin-right: 30px; */
     cursor: url(./cursors/pointer.cur), pointer;
     margin: auto;
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     transform: translateX(-50%);
-    
+
 }
 
 .hide3 {
-    display: none;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    background-color: #ffe6ef00;
-    color: rgba(0, 0, 0, 0.405);
+    /* display: none; */
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    background-color: #8c7c8200;
+    color: #76aee2;
     border-radius: 3px;
     text-align: center;
     width: 80px;
     position: absolute;
-    top: 68%;
+    top: 93%;
     left: 50%;
     transform: translateX(-50%);
     margin: auto;
@@ -308,47 +254,56 @@ body::before {
     display: block;
 }
 
-
-.wip2 {
-    flex: 50%;
-    margin: auto;
-    background: url(./images/wingr.gif) no-repeat center;
-    background-size: 70px;
-    width: 70px;
-    height: 60px;
+.music-toggle {
+    background: url(./images/orange.gif) no-repeat center;
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     border: none;
     padding: 0;
-    border-radius: 30%;
-    /* transition: all 0.3s ease-in-out; */
+    border-radius: 50%;
     cursor: url(./cursors/pointer.cur), pointer;
-    position: absolute;
-    margin: auto;
-    top: 50%;
-    right: 25%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
 }
 
-.hide2 {
-    display: none;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    background-color: #ffe6ef00;
-    color: rgba(0, 0, 0, 0.405);
-    border-radius: 3px;
-    text-align: center;
-    width: 80px;
-    position: absolute;
-    top: 67%;
-    right: 25%;
-    margin: auto;
-}
-
-.wip2:hover {
+.music-toggle:hover {
     transform: scale(1.1);
 }
 
-.wip2:hover + .hide2 {
-    display: block;
+.music-toggle.playing {
+    animation: spin 15s linear infinite;
+}
+
+.music-caption {
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #a6d0f769;
+    position: fixed;
+    bottom: 4px;
+    right: 20px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.music-caption.visible {
+    opacity: 1;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /*--------------------------------------------------*/
@@ -357,13 +312,13 @@ body::before {
     display: none;
     width: 550px;
     height: 410px;
-    border: 1px solid #c5c5c5;
+    border: 1px solid #ffffff;
     background-color: #ffffff;
     background-image: radial-gradient(rgb(255, 255, 255) 22%, transparent 28%),
     radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
     background-position: 0px 0px, 10px 10px;
     background-size: 20px 20px;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(225, 242, 255);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -391,6 +346,7 @@ body::before {
 
 .tip-window .window-top {
     width: 235px;
+    padding-right: 35px;
 }
 
 .tip-window .window-content {
@@ -417,8 +373,8 @@ body::before {
 }
 
 .tip-content {
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #696969;
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #76aee2;
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
@@ -441,12 +397,12 @@ body::before {
     border-top-right-radius: 9px;
     margin-bottom: 0px;
     padding: 0px;
-    background-color: #c1c1c1;
+    background-color: rgb(126, 181, 226);
     display: flex;
     align-items: stretch;
     position: relative;
     box-sizing: border-box;
-    padding-right: 35px;
+    padding-right: 70px;
     cursor: url(./cursors/move.cur), move;
 }
 
@@ -476,16 +432,16 @@ body::before {
     justify-content: center;
     cursor: pointer;
     border: none;
-    border-right: 1px solid #a4a4a4;
+    border-right: 1px solid #ffffff;
     background: transparent;
     font-size: 14px;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: rgba(0, 0, 0, 0.415);
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: rgb(73, 130, 177);
     cursor: url(./cursors/pointer.cur), pointer;
 }
 
 .tab-btn:hover {
-     background-color: #ffffff3b;
+     background-color: #e1eaff63;
 }
 
 .tab-btn:first-child {
@@ -493,7 +449,7 @@ body::before {
 }
 
 .tab-btn.active {
-    background-color: #edcfda;
+    background-color: rgb(161, 206, 244);
     color: #ffffff;
     /* font-weight: 600; */
 }
@@ -503,6 +459,7 @@ body::before {
 	height: 35px;
 	width: 35px;
     position: absolute;
+    background-color:#b6d7f4;
     top: 0;
     right: -15px;
 	border: none;
@@ -513,8 +470,27 @@ body::before {
 
 .close > p {
     font-size: 12px;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: rgba(0, 0, 0, 0.415);
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: rgb(73, 130, 177);
+    margin: auto;
+}
+
+.tip-help {
+	height: 35px;
+	width: 35px;
+    position: absolute;
+    background-color:#b6d7f4;
+    top: 0;
+    right: 20px;
+	border: none;
+    cursor: pointer;
+    cursor: url(./cursors/pointer.cur), pointer;
+}
+
+.tip-help > p {
+    font-size: 12px;
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: rgb(73, 130, 177);
     margin: auto;
 }
 
@@ -525,19 +501,20 @@ body::before {
 }
 
 .tooltip-target:hover {
-        color: #e3b2bb;
+        color: #b6d7f4;
 }
 
 .tooltip {
     position: absolute;
     pointer-events: none;
     display: none;
-    background: #ffe6ef;
-    color: #00000069;
+    background:#a1d1fe;
+    color: #ffffff;
+    -webkit-text-stroke: 0.4px rgb(255, 255, 255);
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 12px;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
     z-index: 5;
     white-space: pre;
     max-width: none;
@@ -591,10 +568,10 @@ body::before {
 /* scrollbar */
 .aboutme1::-webkit-scrollbar { width: 10px; }
 .aboutme1::-webkit-scrollbar-track { background: #f5f5f5; }
-.aboutme1::-webkit-scrollbar-thumb { background:#edcfda; border-radius: 6px; }
+.aboutme1::-webkit-scrollbar-thumb { background:#a6d0f7; border-radius: 6px; }
 .aboutme3::-webkit-scrollbar { width: 10px; }
 .aboutme3::-webkit-scrollbar-track { background: #f5f5f5; }
-.aboutme3::-webkit-scrollbar-thumb { background:#edcfda; border-radius: 6px; }
+.aboutme3::-webkit-scrollbar-thumb { background:#a6d0f7; border-radius: 6px; }
 
 
 .tab-panel {
@@ -606,20 +583,33 @@ body::before {
 }
 
 .aboutme {
-    height: 330px;
-    background-image: url(./images/hitagi.PNG);
-    background-size: 430px;
-    background-position-x: 200px;
+    position: relative;
+    height: 260px;
+    width: 270px;
+    inset: -70px -10px;
+    background-color: rgb(255, 255, 255, 0.5);
+    background-image: url(./images/emma.png);
+    background-size: 315px;
+    background-position-x: 0px;
+    background-position-y: 10px;
     background-repeat: no-repeat;
-	font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-blend-mode: lighten;
+	font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14;
-    color: #696969;
-    padding-right: 180px;
-    padding-top: 20px;
+    color:#659ccf;
+    text-shadow:
+     -1.5px -1.5px 0 #ffffff,
+      0   -1.5px 0 #ffffff,
+      1.5px -1.5px 0 #ffffff,
+      1.5px  0   0 #ffffff,
+      1.5px  1.5px 0 #ffffff,
+      0    1.5px 0 #ffffff,
+     -1.5px  1.5px 0 #ffffff,
+     -1.5px  0   0 #ffffff;
+    padding-left: 290px;
+    padding-top: 105px;
     text-align: center;
     line-height: 1.5;
-    position: relative;
-
 }
 
 .aboutme1 {
@@ -627,9 +617,9 @@ body::before {
     background-size: 400px;
     background-position-x: 225px;
     background-repeat: no-repeat;
-	font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14;
-    color: #696969;
+    color: #76aee2;
     padding-right: 180px;
     text-align: center;
     line-height: 1.5;
@@ -644,7 +634,7 @@ body::before {
     gap: 8px 18px;
     margin-bottom: 18px;
     padding-bottom: 12px;
-    border-bottom: 1px dotted #d8c7cf;
+    border-bottom: 1px dotted #ffd89e;
     align-items: start;
 }
 
@@ -658,14 +648,14 @@ body::before {
 }
 
 .matcha-toc a {
-    color: rgb(211, 175, 189);
+    color:#76aee2;
     font-size: 15px;
     display: block;
     text-align: center;
 }
 
 .matcha-toc a:hover {
-    color: rgb(231, 201, 213);
+    color: #a1d1fe;
 }
 
 .matcha-section {
@@ -676,14 +666,14 @@ body::before {
 .matcha-section > h2 {
     margin: 0 0 8px;
     text-align: center;
-    color:rgb(204, 146, 171);
+    color: #578dc0;
     font-weight: 400;
 }
 
 .matcha-section > h3 {
     margin: 0 0 8px;
     text-align: center;
-    color:rgb(206, 147, 173);
+    color: #578dc0;
     font-weight: 400;
     font-size: 22px;
 }
@@ -692,16 +682,16 @@ body::before {
     font-size: 18px;
     text-align: left;
     margin: 0;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color:rgb(213, 160, 181);
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color:#578dc0;
 } 
 
 .hs {
     font-size: 16px;
     text-align: left;
     margin: 0;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color:rgb(223, 181, 199);
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #578dc0;
 } 
 
 .matcha-section p {
@@ -711,10 +701,10 @@ body::before {
 .matcha-intro-image {
     display: block;
     margin: 1px auto 0;
-    max-width: 180px;
+    max-width: 130px;
     width: 100%;
     height: auto;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 #matcha-intro {
@@ -727,9 +717,9 @@ body::before {
     background-size: 400px;
     background-position-x: 225px;
     background-repeat: no-repeat;
-	font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: #696969;
+    color: #76aee2;
     text-align: justified;
     padding: 0px 20px;
     line-height: 1.5;
@@ -754,28 +744,28 @@ body::before {
     gap: 10px;
     margin: 4px 0 18px;
     padding-bottom: 12px;
-    border-bottom: 1px dotted #d8c7cf;
+    border-bottom: 1px dotted #ffd89e;
 }
 
 .matcha-subtab-btn {
-    border: 1px solid #e6c7d3;
-    background-color: #fff7fa;
-    color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #a6d0f7;
+    background-color: rgb(225, 242, 255);;
+    color:rgb(73, 130, 177);
     border-radius: 999px;
     padding: 6px 14px;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     cursor: url(./cursors/pointer.cur), pointer;
 }
 
 .matcha-subtab-btn:hover {
-    background-color: #fff0f5;
+    background-color: #b6d7f4;
 }
 
 .matcha-subtab-btn.active {
-    background-color: #edcfda;
+    background-color:#b6d7f4;
     color: #ffffff;
-    border-color: #edcfda;
+    border-color: #a6d0f7;
 }
 
 .matcha-subtab-panel {
@@ -785,69 +775,6 @@ body::before {
 .matcha-subtab-panel.active {
     display: block;
 }
-
-/* kins grid */
-.kins-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-auto-rows: 150px;
-    gap: 16px;
-    justify-content: center;
-    align-content: center;
-    padding-top: 18px;
-    padding-left: 180px;
-}
-
-.kins-item {
-    position: relative;
-    width: 150px;
-    height: 150px;
-}
-
-.kins-item img {
-    display: block;
-    width: 95%;
-    height: 95%;
-    object-fit: cover;
-    border-radius: 50%;
-    padding-left: 5px;
-}
-
-.kins-item:nth-child(3) img {
-  width: 130px;
-  height: 130px;
-  padding-top: 10px;
-  padding-left: 10px;
-}
-
-.kins-item:nth-child(1) img {
-  /* width: 148px;
-  height: 148px; */
-transform: scale(1.07);
-padding-top: 4px;
-}
-
-.kins-item:nth-child(2) img {
-  width: 137px;
-  height: 137px;
-  padding-top: 10px;
-  padding-left: 8px;
-}
-
-.kins-item:nth-child(5) img {
-  width: 132px;
-  height: 132px;
-  padding-top: 7px;
-  padding-left: 10px;
-}
-
-.kins-frame {
-    position: absolute;
-    inset: -8px;
-    background: url(./images/frame3.png) center/100% 100% no-repeat;
-    pointer-events: none;
-}
-
 
 .aboutme > h2 {
     text-align: left;
@@ -871,7 +798,7 @@ padding-top: 4px;
 }
 
 .img1 {
-    background-image: url(./images/bow.gif);
+    background-image: url(./images/fish.gif);
 }
 
 .img2 {
@@ -883,7 +810,7 @@ padding-top: 4px;
 }
 
 .img4 {
-    background-image: url(./images/bubble.gif);
+    background-image: url(./images/banan.gif);
 }
 
 .img5 {
@@ -933,12 +860,12 @@ padding-top: 4px;
 }
 
 .img13 {
-    background-image: url(./images/bunny.gif);
+    background-image: url(./images/plumeria.gif);
     background-blend-mode:soft-light
 }
 
 .img14 {
-    background-image: url(./images/bow2.gif);
+    background-image: url(./images/hibi.gif);
 }
 
 /* favorites tab */
@@ -952,8 +879,8 @@ padding-top: 4px;
     font-size: 21px;
     text-align: left;
     margin: 0;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color:rgb(206, 147, 173);
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color:#5b94c9;
 }
 
 
@@ -972,7 +899,7 @@ padding-top: 4px;
     radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
     background-position: 0px 0px, 10px 10px;
     background-size: 20px 20px;
-    background-color: rgb(239, 220, 226);
+    background-color: rgb(225, 242, 255);
     border-radius: 50%;
 }
 
@@ -1001,18 +928,18 @@ padding-top: 4px;
     width: 229px;
     top: 15px;
     left: 10px;
-    background-color: #fff7f9;
+    background-color: rgb(225, 242, 255);
     border-radius: 7px;
     border: 15px solid transparent;
-    border-image-source: url(./images/lace-p.png) !important;
+    border-image-source: url(./images/lace-g.png) !important;
     border-image-slice: 5 !important;
     border-image-width: 6px !important;
     border-image-repeat: round !important;
     border-style: solid;
     border-image-outset: 2px;
-    font-family: "Kosugi Maru", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: #959595;
+    color: #76aee2;
     text-align: left;
         /* line-height: 1.2; */
 }
@@ -1024,14 +951,13 @@ padding-top: 4px;
 
 .desch {
     font-size: 18px;
-    color: #e3b2bb;
+    color: rgb(73, 130, 177);
 
 }
 
 .desch1 {
     font-size: 18px;
-    color: #e3b2bb;
-    
+    color: rgb(73, 130, 177);
 }
 
 #desc2 {

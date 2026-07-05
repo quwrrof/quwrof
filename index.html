@@ -32,13 +32,15 @@ feel free to take inspo from my website! ^_^
 -->
 
 <head>
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quwrof⋅˚₊‧𐙚</title>
-
 </head>
+
 <body>
+  
+<canvas id="sea" aria-hidden="true"></canvas>
 
 <div class="tab"> 
  <p>quwrof's home</p>
@@ -49,32 +51,52 @@ feel free to take inspo from my website! ^_^
  <div class="box1">
  <h2>welcome to my website!</h2>
 
+ <div class="aboutme">
+   <!-- <h2>about the<br>webmistress...</h2> -->
+    <p>
+    <span class="tooltip-target" data-tooltip="the name is inspired by chrollo from hxh, spelled 'quwrof' by the author">quwrof</span>
+
+    <span class="img img14"></span>
+    21
+    <span class="img img14"></span>
+    she/her
+    <br>
+    lebanese
+    <span class="img img4"></span>
+    living in germany
+    <br>
+    <span class="img img5"></span>computer science student<span class="img img6"></span>
+    <br>
+
+
+
+    <span class="tooltip-target" data-tooltip="jungian psychological types">ET(S)</span>
+    <span class="img img1"></span>
+    <span class="tooltip-target" data-tooltip="classical socionics">SLI</span>
+    <span class="img img1"></span>
+    <span class="tooltip-target" data-tooltip="enneagram">SP1</span>
+    <!-- <span class="img img1"></span>
+    <span class="tooltip-target" data-tooltip="psychosophy">VEFL</span> -->
+
+
+    <br>
+    <p><span class="tooltip-target discord-link-color" data-tooltip="@quwrrof">discord</span> ⎯ <a href="https://anilist.co/user/quwrof/">anilist</a><span class="img img2"></span></p>
+
+  </p>
+  </div>
 
  <button class="update" onclick="clickSound();"></button>
  <span class="updates">
     updates
  </span>
 
- <button class="tip" onclick="clickSound();"></button>
- <span class="tips">
-    tips
- </span>
-
 <audio id="clicksound" src="sound/click.mp3" autostart="false"></audio>
- <button class="wip1" onclick="clickSound();"></button>
- <span class="hide">
-    notes
-</span>
-
  <button class="about" onclick="clickSound();"></button>
  <span class="hide3">
-    about me
+    
  </span>
 
- <button class="wip2" onclick="clickSound();"></button>
- <span class="hide2">
-    wip
- </span>
+ <div class="tooltip"></div>
 
  </div>
 
@@ -111,7 +133,7 @@ feel free to take inspo from my website! ^_^
     <div class="window-content">
         <div class="tab-panel active" data-tab="updates">
             <div class="tip-content">
-                <p>added matcha notes page! click the left wing ♡ <br> - 16.03.26
+                <p>05.07.2026<br>✧ changed the website's theme<br>✧ revamped the structure
                 </p>
             </div>
         </div>
@@ -123,103 +145,38 @@ feel free to take inspo from my website! ^_^
 
 <div id="myWindow" class="bomboclaat">
     <div class="window-top">
-        <button id="aboutt" class="tab-btn active" data-tab="about"><p>about me</p></button>
-        <button class="tab-btn" data-tab="favs"><p>interests & favorites</p></button>
+        <button class="tab-btn active" data-tab="favs"><p>interests & favorites</p></button>
         <!-- <button class="tab-btn" data-tab="kins"><p>relatable characters</p></button> -->
         <button class="tab-btn" data-tab="cat"><p>my cat</p></button>
+        <button class="tab-btn" data-tab="matcha"><p>matcha log</p></button>
 
 <audio id="closesound" src="sound/close.mp3" autostart="false"></audio>
+ <button class="tip-help" onclick="clickSound();">
+       <p>?</p>
+ </button>
  <button class="close" onclick="closeSound();">
        <p>x</p>
  </button>
- 
+
 </div>
 
   <div id="content1" class="window-content">
 
-    <div class="tab-panel active" data-tab="about">
-      <div class="aboutme">
-        <h2>about the<br>webmistress...</h2>
-        <p>
-        <span class="tooltip-target" data-tooltip="my name is inspired by chrollo from hxh, spelled 'quwrof' by the author">quwrof</span>
-
-        <span class="img img14"></span>
-        21
-        <span class="img img14"></span>
-        she/her
-        <br>
-        lebanese
-        <span class="img img4"></span>
-        living in germany
-        <br>
-        <span class="img img5"></span>computer science student<span class="img img6"></span>
-        <br>
-
-
-        <span class="tooltip-target" data-tooltip="classical socionics">SLI</span>
-        <span class="img img1"></span>
-        <span class="tooltip-target" data-tooltip="jungian psychological types">ET(S)</span>
-        <span class="img img1"></span>
-        <span class="tooltip-target" data-tooltip="enneagram">SP1</span>
-        <!-- <span class="img img1"></span>
-        <span class="tooltip-target" data-tooltip="psychosophy">VEFL</span> -->
-        
-
-        <br>
-        <p><span class="tooltip-target discord-link-color" data-tooltip="@quwrrof">discord</span> ⎯ <a href="https://anilist.co/user/quwrof/">anilist<span class="img img2"></span></a></p>
-
-      </p>
-      </div>
-    </div>
-
-    <div class="tab-panel" data-tab="favs">
+    <div class="tab-panel active" data-tab="favs">
       <div class="aboutme1">
         <div class="fav">
           <h2>my favorites <br> and interests...</h2>
 
-          <p><span class="hd">interests</span> matcha, psychological typology, sudoku, animanga (retro,shoujosei,mystery,(psych.)thriller), manhwa, pokemon card collecting, animals, tech, astronomy, sticker collecting, travelling, pharmacology</p>
-
-          <p><span class="hd">animanga</span> hunter x hunter, monster, takarajima, attack on titan, rose of versailles, vagabond, apothecary diaries, nana, death note, karekano, mononoke series, monogatari series, beastars, berserk, howl's moving castle, billy bat, jujutsu kaisen</p>
-          <p><span class="hd">music</span> nujabes, masayoshi takanaka, yuji ohno, HUS, atlus sound team, shing02, sade, serani poji, toby fox, makoto matsushita, lisa ono, blu-swing, jamiroquai, orange lounge, newjeans, frenesi, clark rainbow</p>
+          <p><span class="hd">interests</span> matcha, psychological typology, sudoku, animanga (retro, shoujosei, mystery, thriller), manhwa, pokemon card collecting, animals, tech, sticker collecting, travelling, astronomy, pharmacology</p>
+          <p><span class="hd">animanga</span> monster, takarajima, rose of versailles, karekano, attack on titan, hunter×hunter, vagabond, apothecary diaries, death note, howl's moving castle, billy bat</p>
+          <p><span class="hd">music</span> lisa ono, nujabes, masayoshi takanaka, yuji ohno, makoto matsushita, tom jobim, astrud gilberto, piero piccioni, walter wanderley</p>
           <p><span class="hd">games</span> undertale, super mario galaxy 1 and 2, minecraft, animal jam, animal crossing, roblox </p>
-          <p><span class="hd">misc.</span>the amazing digital circus, </p>
           <p><span class="hd">pokemon</span> mienshao<span class="img img7"></span>, sylveon<span class="img img8"></span>, glaceon<span class="img img9"></span></p>
           <p><span class="hd">sanrio,san-x,etc.</span> usahana, my melody, monchhichi, sugarbunnies, pochacco, chi chai monchan, korilakkuma</p>
-          <p><span class="hd">animals</span> snow leopards and other felines, red pandas, bunnies, otters, monkeys, sea angels, seals, sharks </p>
+          <p><span class="hd">animals</span> snow leopard, clouded leopard, andean cat, jaguar, red panda, bunny, otter, squirrel monkey, marmoset, sea angel, harp seal</p>
           <p><span class="hd">flowers</span> plumeria, lavender, lily of the valley, hibiscus, wisteria, oriental lily, water lily </p>
-          <p><span class="hd">celestial objects</span> pleiades, moon, neptune, pluto, orion's belt</p>
+          <p><span class="hd">celestial objects</span> pleiades, moon, orion's belt</p>
 
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-panel" data-tab="kins">
-      <div class="aboutme1">
-        <div class="kins-grid">
-          <div class="kins-item">
-          <span class="tooltip-target" data-tooltip="kaguya shinomiya&#10; kaguya-sama: love is war"><img src="images/kaguya.jpeg" alt="kaguya"></span>
-            <div class="kins-frame"></div>
-          </div>
-          <div class="kins-item">
-            <span class="tooltip-target" data-tooltip="chrollo lucilfer&#10; hunter x hunter"><img src="images/chrollo.jpeg" alt="chrollo"></span>
-            <div class="kins-frame"></div>
-          </div>
-          <div class="kins-item">
-            <span class="tooltip-target" data-tooltip="hitagi senjougahara&#10; monogatari series"><img src="images/hitagi.jpeg" alt="hitagi"></span>
-            <div class="kins-frame"></div>
-          </div>
-          <div class="kins-item">
-            <span class="tooltip-target" data-tooltip="maomao&#10; apothecary diaries"><img src="images/maomao.jpeg" alt="maomao"></span>
-            <div class="kins-frame"></div>
-          </div>
-          <div class="kins-item">
-            <span class="tooltip-target" data-tooltip="yukino miyazawa&#10; kare kano"><img src="images/yukino.jpeg" alt="yukino"></span>
-            <div class="kins-frame"></div>
-          </div>
-          <div class="kins-item">
-            <span class="tooltip-target" data-tooltip="yukino yukinoshita&#10; oregairu"><img src="images/yukinon.jpeg" alt="yukinon"></span>
-            <div class="kins-frame"></div>
-          </div>
         </div>
       </div>
     </div>
@@ -230,7 +187,7 @@ feel free to take inspo from my website! ^_^
         <div id="desc1" class="desc">
           <p> <span class="desch">name:</span> nomnom
             <br>
-            <span class="desch">age:</span> 3
+            <span class="desch">age:</span> 4
             <br>
             <span class="desch">gender:</span> boy
             <br>
@@ -255,26 +212,6 @@ feel free to take inspo from my website! ^_^
       </div>
         </div>
       </div>
-    </div>
-
-    <div id="tooltip" class="tooltip"></div>
-
-</div>
-
-<div id="Window2" class="bomboclaat">
-    <div class="window-top">
-        <button id="matcha-tab" class="tab-btn" data-tab="matcha"><p>matcha</p></button>
-        <button class="tab-btn" data-tab="typology"><p>wip</p></button>
-        <button class="tab-btn" data-tab="todo"><p>wip</p></button>
-<audio id="closesound" src="sound/close.mp3" autostart="false"></audio>
- <button class="close" onclick="closeSound();">
-       <p>x</p>
- </button>
- 
-</div>
-
-  <div id="content1" class="window-content">
-
 
     <div class="tab-panel" data-tab="matcha">
       <div class="aboutme3">
@@ -307,7 +244,7 @@ feel free to take inspo from my website! ^_^
               <a href="#matcha-kanay" data-scroll-target="matcha-kanay">kanayamidori - unknown</a>
               <a href="#matcha-uji" data-scroll-target="matcha-uji">uji premium - yoshi en</a>
               <a href="#matcha-haruno" data-scroll-target="matcha-haruno">haruno - yoshi en</a>
-              
+
 
             </div>
 
@@ -390,7 +327,7 @@ feel free to take inspo from my website! ^_^
               <a href="#matcha-banana" data-scroll-target="matcha-banana">banana milk matcha</a>
               <a href="#matcha-jas" data-scroll-target="matcha-jas">jasmine milk tea matcha</a>
             </div>
- 
+
             <section id="matcha-basic" class="matcha-section">
               <h3>classic matcha latte</h3>
               <p><span class="hp">ingredients</span><br>
@@ -462,20 +399,9 @@ feel free to take inspo from my website! ^_^
       </div>
     </div>
 
-    <div class="tab-panel" data-tab="typology">
-      <div class="aboutme1">
-        <p>wip</p>
-      </div>
-    </div>
+    <div id="tooltip" class="tooltip"></div>
 
-    <div class="tab-panel" data-tab="todo">
-      <div class="aboutme1">
-       <p>wip</p>
-      </div>
-    </div>
-
-  </div>
-
+</div>
 </div>
 
  <!--  <div id="Window3" class="bomboclaat">
@@ -520,9 +446,16 @@ feel free to take inspo from my website! ^_^
 
 
 
+    <audio id="musictrack" src="images/takarajima.mp3" loop></audio>
+    <button id="musicToggle" class="music-toggle" aria-label="play music"></button>
+    <span id="musicCaption" class="music-caption">Now playing: Nature of Ireland - Kentaro Haneda</span>
+
     <script src="index.js"> </script>
     <script src="click.js"> </script>
     <script src="sparkle.js"></script>
+    <script src="water.js"></script>
+
+
 
 </body>
 

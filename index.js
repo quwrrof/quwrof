@@ -1,7 +1,5 @@
 const windows  = Array.from(document.querySelectorAll('.bomboclaat'));
 const windowEl = document.querySelector('#myWindow');
-const windowEk = document.querySelector('#Window2');
-const windowEj = document.querySelector('#Window3');
 const tipWindow = document.querySelector('#tipWindow');
 const updateWindow = document.querySelector('#updateWindow');
 const mainBox = document.querySelector('.box');
@@ -18,6 +16,25 @@ function clickSound() {
     var sound = document.getElementById('clicksound');
     sound.play();
 }
+
+// background music toggle
+const musicTrack = document.getElementById('musictrack');
+const musicToggle = document.getElementById('musicToggle');
+const musicCaption = document.getElementById('musicCaption');
+
+musicToggle.addEventListener('click', () => {
+    if (musicTrack.paused) {
+        musicTrack.play();
+        musicToggle.classList.add('playing');
+        musicToggle.setAttribute('aria-label', 'pause music');
+        musicCaption.classList.add('visible');
+    } else {
+        musicTrack.pause();
+        musicToggle.classList.remove('playing');
+        musicToggle.setAttribute('aria-label', 'play music');
+        musicCaption.classList.remove('visible');
+    }
+});
 
 // bring window to front when clicked
 function bringToFront(el) {
@@ -146,6 +163,38 @@ function setActiveTab(win, tabName) {
     }
 }
 
+function bindTooltips(container) {
+    if (!container) return;
+
+    const tooltip        = container.querySelector('.tooltip');
+    const tooltipTargets = Array.from(container.querySelectorAll('.tooltip-target'));
+
+    if (!tooltip || !tooltipTargets.length) return;
+
+    tooltipTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+            tooltip.textContent = target.dataset.tooltip || target.textContent;
+            tooltip.style.display = 'block';
+        });
+
+        target.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const offsetX = 14;
+            const offsetY = 10;
+
+            const x = e.clientX - rect.left - container.clientLeft;
+            const y = e.clientY - rect.top - container.clientTop;
+
+            tooltip.style.left = (x + offsetX) + 'px';
+            tooltip.style.top  = (y + offsetY) + 'px';
+        });
+
+        target.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+        });
+    });
+}
+
 function initWindow(win) {
     const tabButtons = Array.from(win.querySelectorAll('.tab-btn'));
     tabButtons.forEach(btn => {
@@ -156,35 +205,10 @@ function initWindow(win) {
         });
     });
 
-    const tooltip        = win.querySelector('.tooltip');
-    const container      = win.querySelector('.window-content');
-    const tooltipTargets = Array.from(win.querySelectorAll('.tooltip-target'));
-    const scrollLinks    = Array.from(win.querySelectorAll('[data-scroll-target]'));
+    const container   = win.querySelector('.window-content');
+    const scrollLinks = Array.from(win.querySelectorAll('[data-scroll-target]'));
 
-    if (tooltip && container && tooltipTargets.length) {
-        tooltipTargets.forEach(target => {
-            target.addEventListener('mouseenter', () => {
-                tooltip.textContent = target.dataset.tooltip || target.textContent;
-                tooltip.style.display = 'block';
-            });
-
-            target.addEventListener('mousemove', (e) => {
-                const rect = container.getBoundingClientRect();
-                const offsetX = 20;
-                const offsetY = 50;
-
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                tooltip.style.left = (x + offsetX) + 'px';
-                tooltip.style.top  = (y + offsetY) + 'px';
-            });
-
-            target.addEventListener('mouseleave', () => {
-                tooltip.style.display = 'none';
-            });
-        });
-    }
+    bindTooltips(container);
 
     if (container && scrollLinks.length) {
         scrollLinks.forEach(link => {
@@ -299,20 +323,22 @@ function elementDrag(e) {
 const aboutBtn = document.querySelector('.about');
 if (aboutBtn && windowEl) {
     aboutBtn.addEventListener('click', () => {
-        setActiveTab(windowEl, 'about');
+        setActiveTab(windowEl, 'favs');
         showWindow(windowEl);
         bringToFront(windowEl);
     });
 }
 
-const tipBtn = document.querySelector('.tip');
-if (tipBtn && tipWindow) {
-    tipBtn.addEventListener('click', () => {
-        positionSmallWindow(tipBtn, tipWindow, { x: -60, y: -212 });
+const tipHelpBtns = Array.from(document.querySelectorAll('.tip-help'));
+if (tipWindow) {
+    tipHelpBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            positionSmallWindow(btn, tipWindow, { x: -260, y: 20 });
 
-        setActiveTab(tipWindow, 'tip');
-        showWindow(tipWindow);
-        bringToFront(tipWindow);
+            setActiveTab(tipWindow, 'tip');
+            showWindow(tipWindow);
+            bringToFront(tipWindow);
+        });
     });
 }
 
@@ -327,30 +353,14 @@ if (updateBtn && updateWindow) {
     });
 }
 
-const wipBtn = document.querySelector('.wip1');
-if (wipBtn && windowEk) {
-    wipBtn.addEventListener('click', () => {
-        setActiveTab(windowEk, 'matcha');
-        showWindow(windowEk);
-        bringToFront(windowEk);
-    });
-}
-
-const wip2Btn = document.querySelector('.wip2');
-if (wip2Btn && windowEk) {
-    wip2Btn.addEventListener('click', () => {
-        setActiveTab(windowEj, 'random');
-        showWindow(windowEj);
-        bringToFront(windowEj);
-    });
-}
-
 windows.forEach(win => {
     initWindow(win);
     makeDraggable(win);
     win.addEventListener('mousedown', () => bringToFront(win));
     syncWindowOffset(win);
 });
+
+bindTooltips(document.querySelector('.box1'));
 
 initMatchaSubtabs();
 moveWindowsWithMainBox();
