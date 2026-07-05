@@ -634,7 +634,7 @@ body {
     gap: 8px 18px;
     margin-bottom: 18px;
     padding-bottom: 12px;
-    border-bottom: 1px dotted #ffd89e;
+    border-bottom: 1px dotted rgb(245, 214, 115);
     align-items: start;
 }
 
@@ -642,7 +642,7 @@ body {
     grid-column: 1 / -1;
     text-align: center;
     margin: 0 0 2px;
-    color: rgba(0, 0, 0, 0.42);
+    color: rgb(245, 214, 115);
     font-size: 13px;
     letter-spacing: 0.04em;
 }
@@ -721,12 +721,11 @@ body {
     font-size: 16px;
     color: #76aee2;
     text-align: justified;
-    padding: 0px 20px;
+    padding: 0px 20px 0px 30px;
     line-height: 1.5;
     position: relative;
     overflow-y:scroll;
     overflow-x: hidden;
-    scrollbar-gutter: stable;
 }
 
 .aboutme3.no-scroll {
@@ -742,9 +741,10 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 4px 0 18px;
+    margin: 7px 0 18px;
+    padding-left: 14px;
     padding-bottom: 12px;
-    border-bottom: 1px dotted #ffd89e;
+    border-bottom: 1px dotted rgb(245, 214, 115);
 }
 
 .matcha-subtab-btn {
