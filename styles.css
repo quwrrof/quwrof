@@ -42,13 +42,14 @@ html {
         height: 100%;
 }
 
-/* 
+
 body {
     scroll-behavior: smooth !important;
-    background-color: #00000000;
     overflow: hidden;
     height: 100%;
-} */
+    align-items: center;
+    justify-content: center;
+}
 
 /* crt effect */
 /* body::before {
@@ -147,7 +148,7 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 0px;
     padding: 0px;
     background-color: rgb(126, 181, 226);
