@@ -2,6 +2,7 @@ const windows  = Array.from(document.querySelectorAll('.bomboclaat'));
 const windowEl = document.querySelector('#myWindow');
 const tipWindow = document.querySelector('#tipWindow');
 const updateWindow = document.querySelector('#updateWindow');
+const fragWindow = document.querySelector('#fragWindow');
 const mainBox = document.querySelector('.box');
 let zCounter = 10;
 
@@ -14,6 +15,12 @@ function closeSound() {
 
 function clickSound() {
     var sound = document.getElementById('clicksound');
+    sound.play();
+}
+
+function buttonSound() {
+    var sound = document.getElementById('buttonsound');
+    sound.currentTime = 0;
     sound.play();
 }
 
@@ -350,6 +357,17 @@ if (updateBtn && updateWindow) {
         setActiveTab(updateWindow, 'updates');
         showWindow(updateWindow);
         bringToFront(updateWindow);
+    });
+}
+
+const fragBtn = document.querySelector('.frag-btn');
+if (fragBtn && fragWindow) {
+    fragBtn.addEventListener('click', () => {
+        positionSmallWindow(fragBtn, fragWindow, { x: 20, y: -280 });
+
+        setActiveTab(fragWindow, 'frag');
+        showWindow(fragWindow);
+        bringToFront(fragWindow);
     });
 }
 

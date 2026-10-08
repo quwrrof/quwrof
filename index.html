@@ -31,6 +31,8 @@ feel free to take inspo from my website! ^_^
 
 <head>
     <link rel="stylesheet" href="styles.css?v=676767">
+    <link rel="stylesheet" href="snow-leopard-bg.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quwrof⋅˚₊‧𐙚</title>
@@ -57,7 +59,7 @@ feel free to take inspo from my website! ^_^
     <span class="img img14"></span>
     21
     <span class="img img14"></span>
-    she/her
+    female
     <br>
     lebanese
     <span class="img img4"></span>
@@ -89,7 +91,8 @@ feel free to take inspo from my website! ^_^
     updates
  </span>
 
-<audio id="clicksound" src="sound/click.mp3" autostart="false"></audio>
+<audio id="clicksound" src="sound/click.wav" autostart="false"></audio>
+<audio id="buttonsound" src="sound/button.wav" autostart="false"></audio>
  <button class="about" onclick="clickSound();"></button>
  <span class="hide3">
     
@@ -132,7 +135,7 @@ feel free to take inspo from my website! ^_^
     <div class="window-content">
         <div class="tab-panel active" data-tab="updates">
             <div class="tip-content">
-                <p>05.07.2026<br>✧ changed the website's theme<br>✧ revamped the structure
+                <p>08.10.2026<br>✧ changed the website's theme<br>✧ added cat forehead page
                 </p>
             </div>
         </div>
@@ -140,17 +143,33 @@ feel free to take inspo from my website! ^_^
 </div>
 
 
+<div id="fragWindow" class="bomboclaat tip-window frag-window">
+    <div class="window-top">
+        <button class="tab-btn active" data-tab="frag"><p>nomnom's forehead</p></button>
+        <button class="close" onclick="closeSound();">
+            <p>x</p>
+        </button>
+    </div>
+
+    <div class="window-content">
+        <div class="tab-panel active" data-tab="frag">
+            
+        </div>
+    </div>
+</div>
+
 <!-- TODO: clean all this mess up and rename things -->
 
 <div id="myWindow" class="bomboclaat">
     <div class="window-top">
-        <button class="tab-btn active" data-tab="favs"><p>interests & favorites</p></button>
-        <!-- <button class="tab-btn" data-tab="kins"><p>relatable characters</p></button> -->
-        <button class="tab-btn" data-tab="cat"><p>my cat</p></button>
-        <button class="tab-btn" data-tab="matcha"><p>matcha log</p></button>
-        <button class="tab-btn" data-tab="selfcare"><p>self care</p></button>
+        <button class="tab-btn active" data-tab="favs" onclick="buttonSound();"><p>interests & favorites</p></button>
+        <!-- <button class="tab-btn" data-tab="kins" onclick="buttonSound();"><p>relatable characters</p></button> -->
+        <button class="tab-btn" data-tab="cat" onclick="buttonSound();"><p>my cat</p></button>
+        <button class="tab-btn" data-tab="matcha" onclick="buttonSound();"><p>matcha log</p></button>
+        <button class="tab-btn" data-tab="selfcare" onclick="buttonSound();"><p>self care</p></button>
+        <button class="tab-btn" data-tab="binder" onclick="buttonSound();"><p>pokemon binder</p></button>
 
-<audio id="closesound" src="sound/close.mp3" autostart="false"></audio>
+<audio id="closesound" src="sound/close.wav" autostart="false"></audio>
  <button class="tip-help" onclick="clickSound();">
        <p>?</p>
  </button>
@@ -210,6 +229,7 @@ feel free to take inspo from my website! ^_^
           i purr just from being looked at! <br>
           i can sit like a human <span class="img img10"></span>
         </p>
+        <button class="frag-btn" type="button" onclick="clickSound();">what my forehead smells like</button>
       </div>
         </div>
       </div>
@@ -218,9 +238,9 @@ feel free to take inspo from my website! ^_^
       <div class="aboutme3">
         <div class="matcha-subtabs" data-subtabs>
           <div class="matcha-subtab-bar">
-            <button class="matcha-subtab-btn active" type="button" data-subtab="intro">intro</button>
-            <button class="matcha-subtab-btn" type="button" data-subtab="reviews">reviews</button>
-            <button class="matcha-subtab-btn" type="button" data-subtab="recipes">recipes</button>
+            <button class="matcha-subtab-btn active" type="button" data-subtab="intro" onclick="buttonSound();">intro</button>
+            <button class="matcha-subtab-btn" type="button" data-subtab="reviews" onclick="buttonSound();">reviews</button>
+            <button class="matcha-subtab-btn" type="button" data-subtab="recipes" onclick="buttonSound();">recipes</button>
           </div>
 
           <div class="matcha-subtab-panel active" data-subtab="intro">
@@ -404,10 +424,10 @@ feel free to take inspo from my website! ^_^
       <div class="aboutme3">
         <div class="matcha-subtabs" data-subtabs>
           <div class="matcha-subtab-bar">
-            <button class="matcha-subtab-btn active" type="button" data-subtab="skincare">skincare routine</button>
-            <button class="matcha-subtab-btn" type="button" data-subtab="hair">hair routine</button>
-            <button class="matcha-subtab-btn" type="button" data-subtab="scents">scent routine</button>
-            <button class="matcha-subtab-btn" type="button" data-subtab="gym">gym routine</button>
+            <button class="matcha-subtab-btn active" type="button" data-subtab="skincare" onclick="buttonSound();">skincare routine</button>
+            <button class="matcha-subtab-btn" type="button" data-subtab="hair" onclick="buttonSound();">hair routine</button>
+            <button class="matcha-subtab-btn" type="button" data-subtab="scents" onclick="buttonSound();">scent routine</button>
+            <button class="matcha-subtab-btn" type="button" data-subtab="gym" onclick="buttonSound();">gym routine</button>
           </div>
 
           <div class="matcha-subtab-panel active" data-subtab="skincare">
@@ -425,10 +445,52 @@ feel free to take inspo from my website! ^_^
           </div>
 
           <div class="matcha-subtab-panel" data-subtab="scents">
-            <section class="matcha-section">
-              <h3></h3>
-              <p>coming soon...</p>
+            coming soon...
+            <!-- <div class="scent-text">
+              <h3>sleepy scent routine</h3>
+              <p>Every product in this routine is from Lush, and all four share the same fragrance, which is known as sleepy. It is a creamy, sweet, sugary lavender and tonka fragrance </p>
+
+              </div>
+            <section class="scent-row">
+              <div class="scent-image scent-bar" role="img" aria-label="sleepy massage bar"></div>
+
+              <div class="scent-text">
+                <h3>sleep massage bar</h3>
+                <p>i start by warming the bar between my hands until it begins to melt, then smooth it over my chest and arms and massage it in with my palms.</p>
+              </div>
             </section>
+
+            <section class="scent-row reverse">
+              <div class="scent-image scent-body" role="img" aria-label="sleepy body lotion"></div>
+              <div class="scent-text">
+                <h3>sleepy body lotion</h3>
+                <p>i apply the lotion to the rest of my body, covering everywhere the massage bar hasn't touched.</p>
+              </div>
+            </section>
+
+            <section class="scent-row">
+              <div class="scent-image scent-dust" role="img" aria-label="sleepy dusting powder"></div>
+              <div class="scent-text">
+                <h3>sleepy dusting powder</h3>
+                <p>once the lotion has settled, I dust the powder lightly over my skin. It removes any tackiness and leaves a soft and dry finish.</p>
+              </div>
+            </section>
+
+            <section class="scent-row reverse">
+              <div class="scent-image scent-bs" role="img" aria-label="sleepy body spray"></div>
+              <div class="scent-text">
+                <h3>sleepy body spray</h3>
+                <p>I finish with the body spray</p>
+              </div>
+            </section>
+
+            <section class="scent-row">
+              <div class="scent-image scent-ac" role="img" aria-label="american cream perfume"></div>
+              <div class="scent-text">
+                <h3>american cream perfume</h3>
+                <p>for the last step, i spritz a little american cream on my wrists and neck. it's a soft, creamy vanilla scent that sits sweetly on top of sleepy.</p>
+              </div>
+            </section> -->
           </div>
 
           <div class="matcha-subtab-panel" data-subtab="gym">
@@ -441,6 +503,36 @@ feel free to take inspo from my website! ^_^
       </div>
     </div>
 
+    <div class="tab-panel" data-tab="binder">
+      <div class="aboutme3">
+        <section class="matcha-section">
+          <h2>pokemon binder</h2>
+        </section>
+        <div class="binder-grid">
+          <div class="binder-slot"><img src="images/pokemon/card1.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card2.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card3.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card4.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card5.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card6.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card7.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card8.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card9.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card10.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card11.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card12.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card13.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card14.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card15.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card16.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card17.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card18.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card19.webp" alt="" onerror="this.remove()"></div>
+          <div class="binder-slot"><img src="images/pokemon/card20.webp" alt="" onerror="this.remove()"></div>
+        </div>
+      </div>
+    </div>
+
     <div id="tooltip" class="tooltip"></div>
 
 </div>
@@ -448,9 +540,9 @@ feel free to take inspo from my website! ^_^
 
  <!--  <div id="Window3" class="bomboclaat">
     <div class="window-top">
-        <button id="random" class="tab-btn active" data-tab="random"><p>wip</p></button>
-        <button class="tab-btn" data-tab="idk"><p>wip</p></button>
-        <button class="tab-btn" data-tab="nunu"><p>wip</p></button>
+        <button id="random" class="tab-btn active" data-tab="random" onclick="buttonSound();"><p>wip</p></button>
+        <button class="tab-btn" data-tab="idk" onclick="buttonSound();"><p>wip</p></button>
+        <button class="tab-btn" data-tab="nunu" onclick="buttonSound();"><p>wip</p></button>
 
 
 <audio id="closesound" src="sound/close.mp3" autostart="false"></audio>
@@ -488,14 +580,15 @@ feel free to take inspo from my website! ^_^
 
 
 
-    <audio id="musictrack" src="images/takarajima.mp3" loop></audio>
-    <button id="musicToggle" class="music-toggle" aria-label="play music"></button>
-    <span id="musicCaption" class="music-caption">Now playing: Nature of Ireland - Kentaro Haneda</span>
+    <audio id="musictrack" src="sound/takarajima.mp3" loop></audio>
+    <button id="musicToggle" class="music-toggle" aria-label="play music" onclick="buttonSound();"></button>
+    <span id="musicCaption" class="music-caption">Now playing: Moonlight confession - Kentaro Haneda</span>
 
     <script src="index.js"> </script>
     <script src="click.js"> </script>
     <script src="sparkle.js"></script>
     <script src="water.js"></script>
+    <script src="snow-leopard-bg.js" defer></script>
 
 
 

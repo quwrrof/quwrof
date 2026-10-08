@@ -1,6 +1,11 @@
 @font-face {
-  font-family: Cause; /* set name */
-  src: url(fonts/Cause-SemiBold.ttf); /* url of the font */
+  font-family: dookie; /* set name */
+  src: url(fonts/basiic.ttf); /* url of the font */
+}
+
+@font-face {
+  font-family: spirit; /* set name */
+  src: url(fonts/Spirit.woff2); /* url of the font */
 }
 
 #sea {
@@ -14,22 +19,24 @@
 
 /* text selection */
 *::selection { 
-    color: #a6d0f7;
+    color: #ddabbf;
 }
 
 /* links */
 a:hover {
-  color: #b6d7f4;
+  color: #ddabbf;
   cursor: url(./cursors/pointer.cur), pointer;
 }
+
 a {
-    color:#76aee2;
+    color:rgb(183, 111, 140);
     text-decoration: none;
     transition: color 0.15s ease;
 }
 
 .discord-link-color {
-    color: #76aee2;
+    color: rgb(183, 111, 140);
+
 }
 
 .tooltip-target.discord-link-color {
@@ -72,12 +79,8 @@ body {
 .box {
     width: 600px;
     height: 435px;
-    border: 1px solid #ffffff;
-    background-image: radial-gradient(rgb(255, 255, 255) 22%, transparent 28%),
-    radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
-    background-position: 0px 0px, 10px 10px;
-    background-size: 20px 20px;
-    background-color: rgba(225, 242, 255, 0.491);
+    border: 1px solid #000000;
+    background-image:url(/images/snowl.webp);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 0px;
@@ -85,6 +88,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .box2 {
@@ -103,12 +107,12 @@ body {
     height: 370px;
     background-color: rgb(255, 255, 255, 0.5);
     margin: auto;
-    background-image: url(./images/Veil\ Emma\ Sea.webp);
+    /* background-image: url(./images/Veil\ Emma\ Sea.webp);
     background-size: 270px;
     background-position-x: 300px;
     background-position-y: -20px;
     background-blend-mode: lighten;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     border-radius: 7px;
     border: 15px solid transparent;
     border-image-source: url(./images/lace-g.webp) !important;
@@ -124,9 +128,9 @@ body {
 .box1 > h2 {
     position: relative;
     z-index: 1;
-    font-size: 45px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #578dc0;
+    font-size: 41px;
+    font-family: "spirit", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #191919;
     font-weight: 400;
     font-style: normal;
     text-align: center;
@@ -151,7 +155,7 @@ body {
     margin-top: 100px;
     margin-bottom: 0px;
     padding: 0px;
-    background-color: rgb(126, 181, 226);
+    background-color: #0c0c0c
 }
 
 .tab > p {
@@ -159,14 +163,14 @@ body {
     padding-right: 15px;
     padding-top: 6px;
     font-size: 20px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "spirit", Helvetica Neue, Helvetica, Arial, sans-serif;
     color: white;
     font-weight: 500;
 }
 
 #undertxt {
     font-size: 12px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     color: rgba(255, 255, 255, 0.5);
     text-align: center;
     margin: 0;
@@ -176,13 +180,11 @@ body {
 /* buttons */
 
 .update {
-    background: url(./images/waterg.webp) no-repeat center;
+    background: url(./images/mail.webp) no-repeat center;
     background-size: 100%;
-    background-color: #ffffff64;
     width: 30px;
     height: 30px;
     cursor: pointer;
-    background-blend-mode: lighten;
     border: none;
     padding: 0;
     border-radius: 20%;
@@ -190,7 +192,7 @@ body {
     margin: auto;
     position: absolute;
     bottom: 1.5%;
-    left: 2%;
+    right: 2%;
 }
 
 .update:hover {
@@ -198,22 +200,22 @@ body {
 }
 
 .updates {
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color: #6ba5dc;
+    color: #00000070;
     border-radius: 3px;
     text-align: center;
     width: 70px;
     position: absolute;
-    bottom: -12px;
-    left: -1.5%;
+    bottom: -10px;
+    right: -2%;
     margin: auto;
 }
 
 .about {
     flex: 50%;
     margin: auto;
-    background: url(./images/plumeria1.webp) no-repeat center;
+    background: url(./images/bow.webp) no-repeat center;
     background-size: 50px;
     width: 50px;
     height: 50px;
@@ -233,10 +235,10 @@ body {
 
 .hide3 {
     /* display: none; */
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 17px;
     background-color: #8c7c8200;
-    color: #76aee2;
+    color: #393939;
     border-radius: 3px;
     text-align: center;
     width: 80px;
@@ -258,17 +260,18 @@ body {
 .music-toggle {
     background: url(./images/orange.webp) no-repeat center;
     background-size: 100%;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
-    border: none;
     padding: 0;
-    border-radius: 50%;
     cursor: url(./cursors/pointer.cur), pointer;
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 10;
+    background-color: transparent;
+    border: none;
+    opacity: 70%;
 }
 
 .music-toggle:hover {
@@ -277,12 +280,13 @@ body {
 
 .music-toggle.playing {
     animation: spin 15s linear infinite;
+    opacity: 90%;
 }
 
 .music-caption {
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 12px;
-    color: #a6d0f769;
+    color: #ddabbf;
     position: fixed;
     bottom: 4px;
     right: 20px;
@@ -313,13 +317,8 @@ body {
     display: none;
     width: 550px;
     height: 410px;
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
-    background-image: radial-gradient(rgb(255, 255, 255) 22%, transparent 28%),
-    radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
-    background-position: 0px 0px, 10px 10px;
-    background-size: 20px 20px;
-    background-color: rgb(225, 242, 255);
+    border: 1px solid #000000;
+    background-image: url(./images/snowle.webp);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -374,12 +373,12 @@ body {
 }
 
 .tip-content {
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #76aee2;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #393939;
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
-    padding: 8px 14px;
+    padding: 3px 14px;
 }
 
 .tip-content p {
@@ -398,7 +397,7 @@ body {
     border-top-right-radius: 9px;
     margin-bottom: 0px;
     padding: 0px;
-    background-color: rgb(126, 181, 226);
+    background-color: #0c0c0c;
     display: flex;
     align-items: stretch;
     position: relative;
@@ -433,16 +432,21 @@ body {
     justify-content: center;
     cursor: pointer;
     border: none;
-    border-right: 1px solid #ffffff;
+    border-right: 1px solid #2a2a2a;
     background: transparent;
-    font-size: 14px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: rgb(73, 130, 177);
+    font-size: 13px;
+    font-family: "spirit", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: rgba(255, 255, 255, 0.55);
     cursor: url(./cursors/pointer.cur), pointer;
 }
 
+.tab-btn[data-tab="favs"] {
+    font-size: 12.9px;
+}
+
 .tab-btn:hover {
-     background-color: #e1eaff63;
+     background-color: #ffffff14;
+     color: #ffffff;
 }
 
 .tab-btn:first-child {
@@ -450,7 +454,7 @@ body {
 }
 
 .tab-btn.active {
-    background-color: rgb(161, 206, 244);
+    background-color: #2a2a2a;
     color: #ffffff;
     /* font-weight: 600; */
 }
@@ -460,7 +464,7 @@ body {
 	height: 35px;
 	width: 35px;
     position: absolute;
-    background-color:#b6d7f4;
+    background-color: #1c1c1c;
     top: 0;
     right: -15px;
 	border: none;
@@ -471,8 +475,8 @@ body {
 
 .close > p {
     font-size: 12px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: rgb(73, 130, 177);
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #ffffff;
     margin: auto;
 }
 
@@ -480,7 +484,7 @@ body {
 	height: 35px;
 	width: 35px;
     position: absolute;
-    background-color:#b6d7f4;
+    background-color: #1c1c1c;
     top: 0;
     right: 20px;
 	border: none;
@@ -490,8 +494,8 @@ body {
 
 .tip-help > p {
     font-size: 12px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: rgb(73, 130, 177);
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #ffffff;
     margin: auto;
 }
 
@@ -502,20 +506,19 @@ body {
 }
 
 .tooltip-target:hover {
-        color: #b6d7f4;
+        color: #ddabbf;
 }
 
 .tooltip {
     position: absolute;
     pointer-events: none;
     display: none;
-    background:#a1d1fe;
+    background: #0c0c0c;
     color: #ffffff;
-    -webkit-text-stroke: 0.4px rgb(255, 255, 255);
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 12px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     z-index: 5;
     white-space: pre;
     max-width: none;
@@ -549,7 +552,7 @@ body {
 /* about window */
 .window-content {
     width: 525px;
-    height: 350px;
+    height: 357px;
     margin: auto;
     background-color: rgb(255, 255, 255);
     margin-top: 6px;
@@ -562,17 +565,17 @@ body {
     border-style: solid;
     border-image-outset: 2px;
     position: relative;
-	padding: 5px;
+	padding: 0px;
     overflow: visible;
 }
 
 /* scrollbar */
 .aboutme1::-webkit-scrollbar { width: 10px; }
 .aboutme1::-webkit-scrollbar-track { background: #f5f5f5; }
-.aboutme1::-webkit-scrollbar-thumb { background:#a6d0f7; border-radius: 6px; }
+.aboutme1::-webkit-scrollbar-thumb { background:#0c0c0c; border-radius: 6px; }
 .aboutme3::-webkit-scrollbar { width: 10px; }
 .aboutme3::-webkit-scrollbar-track { background: #f5f5f5; }
-.aboutme3::-webkit-scrollbar-thumb { background:#a6d0f7; border-radius: 6px; }
+.aboutme3::-webkit-scrollbar-thumb { background:#0c0c0c; border-radius: 6px; }
 
 
 .tab-panel {
@@ -585,19 +588,19 @@ body {
 
 .aboutme {
     position: relative;
-    height: 260px;
+    height: 245px;
     width: 270px;
     inset: -70px -10px;
-    background-color: rgb(255, 255, 255, 0.5);
+    /* background-color: rgb(255, 255, 255, 0.5); */
     background-image: url(./images/emma.webp);
-    background-size: 315px;
-    background-position-x: 0px;
-    background-position-y: 10px;
+    background-size: 580px;
+    background-position-x: -130px;
+    background-position-y: -90px;
     background-repeat: no-repeat;
     background-blend-mode: lighten;
-	font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14;
-    color:#659ccf;
+	font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    color:#000000;
     text-shadow:
      -1.5px -1.5px 0 #ffffff,
       0   -1.5px 0 #ffffff,
@@ -607,8 +610,8 @@ body {
       0    1.5px 0 #ffffff,
      -1.5px  1.5px 0 #ffffff,
      -1.5px  0   0 #ffffff;
-    padding-left: 290px;
-    padding-top: 105px;
+    padding-left: 280px;
+    padding-top: 95px;
     text-align: center;
     line-height: 1.5;
 }
@@ -618,9 +621,9 @@ body {
     background-size: 400px;
     background-position-x: 225px;
     background-repeat: no-repeat;
-	font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14;
-    color: #76aee2;
+    color: #393939;
     padding-right: 180px;
     text-align: center;
     line-height: 1.5;
@@ -635,7 +638,7 @@ body {
     gap: 8px 18px;
     margin-bottom: 18px;
     padding-bottom: 12px;
-    border-bottom: 1px dotted rgb(245, 214, 115);
+    border-bottom: 1px dotted #f0accc;
     align-items: start;
 }
 
@@ -643,20 +646,20 @@ body {
     grid-column: 1 / -1;
     text-align: center;
     margin: 0 0 2px;
-    color: rgb(245, 214, 115);
+    color: #f0accc;
     font-size: 13px;
     letter-spacing: 0.04em;
 }
 
 .matcha-toc a {
-    color:#76aee2;
+    color:#393939;
     font-size: 15px;
     display: block;
     text-align: center;
 }
 
 .matcha-toc a:hover {
-    color: #a1d1fe;
+    color: #f0accc;
 }
 
 .matcha-section {
@@ -666,15 +669,17 @@ body {
 
 .matcha-section > h2 {
     margin: 0 0 8px;
+    font-family: "spirit", Helvetica Neue, Helvetica, Arial, sans-serif;
     text-align: center;
-    color: #578dc0;
+    color: #191919;
     font-weight: 400;
 }
 
 .matcha-section > h3 {
     margin: 0 0 8px;
+    font-family: "spirit", Helvetica Neue, Helvetica, Arial, sans-serif;
     text-align: center;
-    color: #578dc0;
+    color: #191919;
     font-weight: 400;
     font-size: 22px;
 }
@@ -683,16 +688,16 @@ body {
     font-size: 18px;
     text-align: left;
     margin: 0;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color:#578dc0;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color:#191919;
 } 
 
 .hs {
     font-size: 16px;
     text-align: left;
     margin: 0;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #578dc0;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #191919;
 } 
 
 .matcha-section p {
@@ -718,9 +723,9 @@ body {
     background-size: 400px;
     background-position-x: 225px;
     background-repeat: no-repeat;
-	font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: #76aee2;
+    color: #393939;
     text-align: justified;
     padding: 0px 20px 0px 30px;
     line-height: 1.5;
@@ -744,28 +749,28 @@ body {
     gap: 10px;
     margin: 7px 0 18px;
     padding-bottom: 12px;
-    border-bottom: 1px dotted rgb(245, 214, 115);
+    border-bottom: 1px dotted #f0accc;
 }
 
 .matcha-subtab-btn {
-    border: 1px solid #a6d0f7;
-    background-color: rgb(225, 242, 255);;
-    color:rgb(73, 130, 177);
+    border: 1px solid #0c0c0c;
+    background-color: #ffffff;
+    color: #393939;
     border-radius: 999px;
     padding: 6px 14px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     cursor: url(./cursors/pointer.cur), pointer;
 }
 
 .matcha-subtab-btn:hover {
-    background-color: #b6d7f4;
+    background-color: #fff4f9;
 }
 
 .matcha-subtab-btn.active {
-    background-color:#b6d7f4;
+    background-color: #0c0c0c;
     color: #ffffff;
-    border-color: #a6d0f7;
+    border-color: #0c0c0c;
 }
 
 .matcha-subtab-panel {
@@ -775,6 +780,68 @@ body {
 .matcha-subtab-panel.active {
     display: block;
 }
+
+.scent-row {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: -40px;
+}
+
+.scent-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.scent-image {
+    flex: 0 0 170px;
+    width: 190px;
+    height: 190px;
+    margin: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scent-bar {
+    background-image: url(./images/sleepybar.webp);
+    background-size: 110%;
+}
+
+.scent-body {
+    background-image: url(./images/sleepybody.webp);
+    background-size: 90%;
+}
+
+.scent-bs {
+    background-image: url(./images/sleepybs.webp);
+    background-size: 145%;
+}
+
+.scent-dust {
+    background-image: url(./images/sleepydust.webp);
+}
+
+.scent-ac {
+    background-image: url(./images/acperfume.webp);
+    background-size: 130%;
+}
+
+.scent-text {
+    flex: 1;
+}
+
+.scent-text > h3 {
+    margin: 0 0 -10px;
+    font-family: "spirit", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #191919;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.scent-text p {
+    margin: 0;
+}
+
 
 .aboutme > h2 {
     text-align: left;
@@ -798,7 +865,7 @@ body {
 }
 
 .img1 {
-    background-image: url(./images/fish.webp);
+    background-image: url(./images/rose.webp);
 }
 
 .img2 {
@@ -810,7 +877,7 @@ body {
 }
 
 .img4 {
-    background-image: url(./images/banan.webp);
+    background-image: url(./images/bubble.webp);
 }
 
 .img5 {
@@ -865,7 +932,7 @@ body {
 }
 
 .img14 {
-    background-image: url(./images/hibi.webp);
+    background-image: url(./images/bow2.webp);
 }
 
 .img15 {
@@ -873,6 +940,12 @@ body {
 }
 
 /* favorites tab */
+.fav > h2 {
+    font-family: "spirit", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: #191919;
+}
+
 .fav {
     padding-left: 30px;
     width: 440px;
@@ -883,8 +956,8 @@ body {
     font-size: 21px;
     text-align: left;
     margin: 0;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color:#5b94c9;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color:#191919;
 }
 
 
@@ -899,18 +972,15 @@ body {
     height: 200px;
     display: grid;
     place-items: center;
-    background-image: radial-gradient(rgb(255, 255, 255) 22%, transparent 28%),
-    radial-gradient(rgb(255, 255, 255) 22%, transparent 28%);
-    background-position: 0px 0px, 10px 10px;
-    background-size: 20px 20px;
-    background-color: rgb(225, 242, 255);
+    background-image: url(./images/snowl.webp);
+    background-size: cover;
     border-radius: 50%;
 }
 
 .round {
   position: absolute;
   top: 47%;
-  left: 50%;
+  left: 52%;
   width: 230px;
   height: 230px;
   background: url(./images/nomnom.webp) no-repeat center;
@@ -930,9 +1000,9 @@ body {
     position: absolute;
     height: 180px;
     width: 240px;
-    top: 15px;
+    top: 10px;
     left: 10px;
-    background-color: rgb(225, 242, 255);
+    background-color: #f5f5f5;
     border-radius: 7px;
     border: 15px solid transparent;
     border-image-source: url(./images/lace-g.webp) !important;
@@ -941,9 +1011,9 @@ body {
     border-image-repeat: round !important;
     border-style: solid;
     border-image-outset: 2px;
-    font-family: "Cause", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: #76aee2;
+    color: #393939;
     text-align: left;
         /* line-height: 1.2; */
 }
@@ -955,13 +1025,13 @@ body {
 
 .desch {
     font-size: 18px;
-    color: rgb(73, 130, 177);
+    color: #191919;
 
 }
 
 .desch1 {
     font-size: 18px;
-    color: rgb(73, 130, 177);
+    color: #191919;
 }
 
 #desc2 {
@@ -974,6 +1044,59 @@ body {
 #desc2 > p {
     bottom: 26px;
     line-height: 1;
+}
+
+.frag-btn {
+    position: absolute;
+    width: 150px;
+    height: 55px;
+    top: 12px;
+    right: 10px;
+    border: 1px solid #0c0c0c;
+    background-color: #ffffff;
+    color: #393939;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-family: "dookie", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    cursor: url(./cursors/pointer.cur), pointer;
+}
+
+.frag-btn:hover {
+    background-color: #fff4f9;
+}
+
+.frag-window {
+    height: 400px;
+    width: 460px;
+    top: 180px;
+    left: 1020px;
+}
+
+.frag-window .window-content {
+    height: 340px;
+    width: 430px;
+    background-image: url(./images/frag.webp);
+    background-repeat: none;
+    background-size: 101%;
+    background-position: -2px -45px;
+    background-position: center;
+}
+
+.frag-window .window-top {
+    width: 445px;
+}
+
+.frag-window .tab-panel {
+    height: 100%;
+}
+
+.frag-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
 }
 
 /* .nomnom1 {
@@ -989,4 +1112,33 @@ body {
 
 #typo > p {
     text-align: justify;
+}
+
+/* pokemon binder */
+.binder-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.binder-slot {
+    aspect-ratio: 63 / 88;
+    border: 1px dotted #f0accc;
+    border-radius: 5px;
+    background-color: #fdf3f8;
+    overflow: hidden;
+}
+
+.binder-slot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.binder-slot img:hover {
+    transform: scale(1.05);
 }

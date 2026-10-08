@@ -1,4 +1,4 @@
-var colour = "rgb(218, 242, 255)"
+var colour = "rgb(197, 197, 197)"
 ;
 var sparkles = 100;
 
@@ -11,7 +11,7 @@ var swide = 800;
 var shigh = 600;
 var sleft = 0;
 var sdown = 0;
-var colours = ["rgb(221, 239, 255)"];
+var colours = ["rgb(191, 191, 191)"];
 
 var dustDots = [];
 var tiny = [];

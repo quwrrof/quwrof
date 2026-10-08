@@ -1,5 +1,5 @@
   var b = document.body;
-  var imgurl = "images/plumer.webp";
+  var imgurl = "images/paw.webp";
   var size = [10, 20];
   function rand(min, max)
   {
