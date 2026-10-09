@@ -276,6 +276,33 @@ function initMatchaSubtabs() {
 }
 
 
+// tilt pokemon cards toward the mouse
+function initBinderTilt() {
+    const slots = Array.from(document.querySelectorAll('.binder-slot'));
+
+    slots.forEach(slot => {
+        const card = slot.querySelector('.binder-card');
+        if (!card) return;
+
+        slot.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+
+            card.style.setProperty('--ry', ((x - 0.5) * 20) + 'deg');
+            card.style.setProperty('--rx', ((0.5 - y) * 20) + 'deg');
+            card.style.setProperty('--mx', (x * 100) + '%');
+            card.style.setProperty('--my', (y * 100) + '%');
+        });
+
+        slot.addEventListener('mouseleave', () => {
+            card.style.setProperty('--rx', '0deg');
+            card.style.setProperty('--ry', '0deg');
+        });
+    });
+}
+
+
 // draggable windows
 function makeDraggable (element) {
     // Make an element draggable (or if it has a .window-top class, drag based on the .window-top element)
@@ -381,6 +408,7 @@ windows.forEach(win => {
 bindTooltips(document.querySelector('.box1'));
 
 initMatchaSubtabs();
+initBinderTilt();
 moveWindowsWithMainBox();
 
 window.addEventListener('resize', moveWindowsWithMainBox);

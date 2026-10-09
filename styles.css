@@ -785,7 +785,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0px;
-    margin-bottom: -40px;
+    margin-bottom: -50px;
 }
 
 .scent-row.reverse {
@@ -828,10 +828,11 @@ body {
 
 .scent-text {
     flex: 1;
+    line-height: 1.5;
 }
 
 .scent-text > h3 {
-    margin: 0 0 -10px;
+    margin: 0 0 -8px;
     font-family: "spirit", Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #191919;
     font-weight: 400;
@@ -1117,28 +1118,81 @@ body {
 /* pokemon binder */
 .binder-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, auto);
-    gap: 10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
     margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.tab-panel[data-tab="binder"] .aboutme3 {
+    padding: 0 4px 0 6px;
 }
 
 .binder-slot {
+    --fx: 0.5;
+    --fy: 0.5;
     aspect-ratio: 63 / 88;
     border: 1px dotted #f0accc;
     border-radius: 5px;
     background-color: #fdf3f8;
-    overflow: hidden;
+    position: relative;
 }
 
-.binder-slot img {
+/* grow inward at the edges so zoomed cards don't get cut off */
+.binder-slot:nth-child(4n + 1) { --fx: 0; }
+.binder-slot:nth-child(4n)     { --fx: 1; }
+.binder-slot:nth-child(-n + 4) { --fy: 0; }
+.binder-slot:nth-last-child(-n + 4) { --fy: 1; }
+
+.binder-card {
+    --rx: 0deg;
+    --ry: 0deg;
+    --mx: 50%;
+    --my: 50%;
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    left: calc(var(--fx) * -40%);
+    top: calc(var(--fy) * -40%);
+    border-radius: 7px;
+    overflow: hidden;
+    transform-origin: calc(var(--fx) * 100%) calc(var(--fy) * 100%);
+    transform: perspective(840px) scale(0.7143);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1.2), box-shadow 0.35s ease;
+}
+
+.binder-card img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.2s;
 }
 
-.binder-slot img:hover {
-    transform: scale(1.05);
+.binder-slot:hover {
+    z-index: 100;
+}
+
+.binder-slot:hover .binder-card {
+    transform: perspective(840px) scale(1) rotateX(var(--rx)) rotateY(var(--ry));
+    transition: transform 0.1s ease-out, box-shadow 0.35s ease;
+}
+
+.binder-slot:hover .binder-card:has(img) {
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* holo shine that follows the mouse */
+.binder-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, 0.45), transparent 55%);
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.binder-slot:hover .binder-card::after {
+    opacity: 1;
 }
