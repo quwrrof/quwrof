@@ -295,7 +295,14 @@ function initBinderTilt() {
             card.style.setProperty('--my', (y * 100) + '%');
         });
 
+        card.addEventListener('transitionend', e => {
+            if (e.propertyName === 'transform' && slot.matches(':hover')) {
+                card.classList.add('zoomed');
+            }
+        });
+
         slot.addEventListener('mouseleave', () => {
+            card.classList.remove('zoomed');
             card.style.setProperty('--rx', '0deg');
             card.style.setProperty('--ry', '0deg');
         });
